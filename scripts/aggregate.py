@@ -20,6 +20,7 @@ Outputs (in OUT_DIR, default "frontend")
   subscribe.json        -> the TVBox config described above
   subscribe-check.json  -> per-site detection results
   subscribe-report.json -> summary statistics
+  sites-check.csv/.md   -> one row per collected site: usable?, latency, reason
   sources-check.json/.md -> one row per source file (download status, sites found,
                             how many passed), plus the code-search request log
 
@@ -393,6 +394,47 @@ def write_json(name, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
+REASON_TEXT = {
+    "ok": "可用", "too_slow": "太慢(超过阈值)", "timeout": "超时", "connection_error": "连接失败",
+    "not_json": "返回的不是JSON", "no_class": "没有分类列表", "empty_list": "视频列表为空",
+    "bad_item": "视频条目格式不对", "error": "其他错误", "unknown": "未知",
+}
+
+
+def write_sites_report(now, checks):
+    """sites-check.csv / sites-check.md: one row per collected site -> usable? how fast?"""
+    def label(c):
+        if c["passed"]:
+            return "可用"
+        return REASON_TEXT.get(c["reason"], c["reason"] if not c["reason"].startswith("http_")
+                               else "HTTP错误 " + c["reason"][5:])
+
+    rows = sorted(checks, key=lambda c: (not c["passed"],
+                                         c["latency_ms"] if c["latency_ms"] is not None else 10**9))
+    import csv
+    os.makedirs(OUT_DIR, exist_ok=True)
+    head = ["名称", "API地址", "来源", "是否可用", "耗时(ms)", "原因", "是否信任", "是否进入输出"]
+    with open(os.path.join(OUT_DIR, "sites-check.csv"), "w", encoding="utf-8-sig", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(head)
+        for c in rows:
+            w.writerow([c["name"], c["api"], c["source"], "是" if c["passed"] else "否",
+                        c["latency_ms"] if c["latency_ms"] is not None else "",
+                        label(c), "是" if c["trusted"] else "否",
+                        "是" if c.get("in_output") else "否"])
+    ok = sum(1 for c in rows if c["passed"])
+    lines = [f"# Site check ({now})", "",
+             f"可用 {ok} / 共检测 {len(rows)}（可用 = 分类列表和视频列表都能返回，且耗时不超过 {MAX_LATENCY_MS}ms；"
+             f"耗时取两次请求中较慢的一次）", "",
+             "| 名称 | API地址 | 可用 | 耗时(ms) | 原因 | 进入输出 |", "|---|---|---|---|---|---|"]
+    for c in rows:
+        lines.append(f"| {c['name']} | {c['api']} | {'✅' if c['passed'] else '❌'} | "
+                     f"{c['latency_ms'] if c['latency_ms'] is not None else '-'} | {label(c)} | "
+                     f"{'是' if c.get('in_output') else '否'} |")
+    with open(os.path.join(OUT_DIR, "sites-check.md"), "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+
+
 def write_source_report(now, seed, extra_trusted, sources, download_reason,
                         found_per_source, checks, kept_seed_sites, dropped_seed_sites,
                         live_checks):
@@ -566,6 +608,7 @@ def main():
     write_source_report(now, seed, extra_trusted, sources, download_reason,
                         found_per_source, checks, kept_seed_sites, dropped_seed_sites,
                         live_checks)
+    write_sites_report(now, checks)
     lats = [c["latency_ms"] for c in checks if c["passed"]]  # passed sites only
     write_json("subscribe-check.json", {
         "generated_at": now,
