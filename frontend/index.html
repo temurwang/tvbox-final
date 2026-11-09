@@ -1,27 +1,246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TVBox源聚合器</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>TVBox源聚合器</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #f4f7fa;
+    color: #2c3e50;
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .card {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 20px 40px 32px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, .08);
+  }
+  @media (max-width: 640px) { .card { margin: 0; border-radius: 0; padding: 16px 16px 28px; } }
+  h1 { text-align: center; font-size: 2rem; margin: .5rem 0 1rem; padding-bottom: .75rem; border-bottom: 1px solid #dfe4e8; }
+  h2 { font-size: 1.35rem; margin: 1.75rem 0 .75rem; padding-bottom: .5rem; border-bottom: 1px solid #dfe4e8; }
+  #status { text-align: center; font-weight: 700; padding: .8rem 1rem; border-radius: 6px; margin-bottom: 1.25rem; }
+  #status.idle    { background: #e8eef3; color: #2c3e50; }
+  #status.running { background: #fff3cd; color: #7a5a00; }
+  #status.success { background: #d4edda; color: #1b5e2f; }
+  #status.failed  { background: #f8d7da; color: #721c24; }
+  .center { text-align: center; }
+  .field { max-width: 22rem; margin: 0 auto 1rem; }
+  label { display: block; font-weight: 600; margin-bottom: .25rem; }
+  input, select {
+    width: 100%; padding: .55rem .7rem; font: inherit; color: inherit;
+    background: #fff; border: 1px solid #c3ccd5; border-radius: 6px;
+  }
+  details { max-width: 22rem; margin: 0 auto 1.25rem; }
+  summary { cursor: pointer; color: #3a6f9f; }
+  details .field { margin: .75rem 0 0; max-width: none; }
+  .hint { margin: .25rem 0 0; font-size: .85rem; color: #66727f; }
+  button {
+    font: inherit; font-weight: 700; color: #fff; background: #3498db;
+    border: 0; border-radius: 6px; padding: .8rem 1.6rem; cursor: pointer;
+  }
+  button:hover { background: #2a86c4; }
+  button:disabled { background: #9bb8cf; cursor: default; }
+  button.small { padding: .3rem .8rem; font-size: .85rem; }
+  input:focus-visible, select:focus-visible, button:focus-visible, summary:focus-visible, a:focus-visible {
+    outline: 2px solid #1f6fa8; outline-offset: 2px;
+  }
+  #log {
+    height: 18rem; overflow-y: auto; margin: 0; padding: 1rem;
+    background: #2e3f50; color: #e8eef3; border-radius: 6px;
+    font: 14px/1.6 ui-monospace, SFMono-Regular, Consolas, "Microsoft YaHei", monospace;
+    white-space: pre-wrap; word-break: break-word;
+  }
+  #log .bad { color: #ff9b94; }
+  #log .ok { color: #8fe0a8; }
+  ul.links { list-style: none; margin: 0; padding: 1rem; background: #edf0f2; border-radius: 6px; }
+  ul.links li { display: flex; gap: .75rem; align-items: center; justify-content: space-between;
+                flex-wrap: wrap; padding: .4rem 0; }
+  ul.links li + li { border-top: 1px solid #dde2e6; }
+  ul.links .name { font-weight: 600; }
+  ul.links a { color: #1f6fa8; word-break: break-all; }
+  .note { margin: .75rem 0 0; font-size: .9rem; color: #66727f; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>TVBox源聚合器</h1>
-        <p id="status" class="status-pending">状态: 等待操作</p>
-        <div class="controls">
-            <button id="startButton">开始聚合任务</button>
-        </div>
-        <div class="output-area">
-            <h2>实时日志</h2>
-            <pre id="log-output">点击按钮开始...</pre>
-        </div>
-        <div class="result-area">
-            <h2>聚合订阅链接</h2>
-            <p id="result-link">任务完成后将在此处显示...</p>
-        </div>
+<div class="card">
+  <h1>TVBox源聚合器</h1>
+
+  <div id="status" class="idle" role="status" aria-live="polite">状态: 空闲</div>
+
+  <div class="center">
+    <div class="field">
+      <label for="pw">触发密码</label>
+      <input id="pw" type="password" autocomplete="current-password">
     </div>
-    <script src="script.js"></script>
+    <details>
+      <summary>高级选项</summary>
+      <div class="field" style="text-align:left">
+        <label for="mode">采集方式</label>
+        <select id="mode">
+          <option value="0">搜索新站点并检测</option>
+          <option value="1">只处理 seed.json，不搜索</option>
+        </select>
+      </div>
+      <div class="field" style="text-align:left">
+        <label for="sites">最多保留站点数</label>
+        <input id="sites" type="number" min="1" max="500" value="150" inputmode="numeric">
+        <p class="hint">只要最快的 20 个，填 20。</p>
+      </div>
+      <div class="field" style="text-align:left">
+        <label for="lat">延迟上限（毫秒）</label>
+        <input id="lat" type="number" min="300" max="20000" value="4000" inputmode="numeric">
+      </div>
+    </details>
+    <button id="go" type="button">开始聚合任务</button>
+  </div>
+
+  <h2>实时日志</h2>
+  <pre id="log" aria-label="实时日志"></pre>
+
+  <h2>聚合订阅链接</h2>
+  <ul class="links" id="links"></ul>
+  <p class="note">聚合完成后，Cloudflare 还需要约 1 到 2 分钟发布新文件，期间链接里仍是上一次的内容。</p>
+</div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var pw = $("pw"), go = $("go"), logEl = $("log"), statusEl = $("status");
+  var timer = null, deadline = 0, runId = null, clickedAt = 0, seen = {};
+
+  try { pw.value = sessionStorage.getItem("trigger_pw") || ""; } catch (e) {}
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function log(text, cls) {
+    var d = new Date();
+    var line = document.createElement("div");
+    if (cls) line.className = cls;
+    line.textContent = "[" + pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds()) + "] " + text;
+    logEl.appendChild(line);
+    logEl.scrollTop = logEl.scrollHeight;
+  }
+  function setStatus(text, cls) { statusEl.textContent = "状态: " + text; statusEl.className = cls; }
+
+  function call(payload) {
+    payload.password = pw.value;
+    return fetch("/api/trigger", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function (r) {
+      return r.json().catch(function () {
+        return { ok: false, error: "服务端返回的不是 JSON（HTTP " + r.status + "），/api/trigger 可能还没部署" };
+      });
+    });
+  }
+
+  function stop() { if (timer) { clearInterval(timer); timer = null; } go.disabled = false; }
+  function fail(text) { setStatus("失败", "failed"); log(text, "bad"); stop(); }
+
+  var STEP_TEXT = { queued: "排队", in_progress: "进行中", completed: "完成" };
+
+  function reportSteps(steps) {
+    steps.forEach(function (s) {
+      var state = s.status === "completed" ? (s.conclusion || "completed") : s.status;
+      var key = s.name + "|" + state;
+      if (seen[key]) return;
+      seen[key] = true;
+      if (s.status === "queued") return;
+      if (s.status === "in_progress") { log("开始：" + s.name); return; }
+      if (s.conclusion === "success") log("完成：" + s.name, "ok");
+      else if (s.conclusion === "skipped") log("跳过：" + s.name);
+      else log("失败：" + s.name + "（" + s.conclusion + "）", "bad");
+    });
+  }
+
+  function tick() {
+    if (Date.now() > deadline) { fail("超过 15 分钟仍未结束，请到 GitHub 的 Actions 页面查看。"); return; }
+    call({ action: "status" }).then(function (res) {
+      if (!res.ok) { fail(res.error); return; }
+      if (!runId) {
+        // 找到点击之后创建的那次运行（留 60 秒余量应对时钟差）
+        var mine = res.runs.filter(function (r) { return new Date(r.created_at).getTime() >= clickedAt - 60000; })[0];
+        if (!mine) return;
+        runId = mine.id;
+        log("GitHub 已接收任务，运行编号 " + runId);
+      }
+      var run = res.runs.filter(function (r) { return r.id === runId; })[0];
+      if (!run) return;
+      return call({ action: "steps", run_id: runId }).then(function (st) {
+        if (st.ok) reportSteps(st.steps);
+        if (run.status === "queued") { setStatus("排队中", "running"); return; }
+        if (run.status === "in_progress") { setStatus("运行中", "running"); return; }
+        if (run.conclusion === "success") {
+          setStatus("聚合完成", "success");
+          log("全部完成。约 1 到 2 分钟后下面的链接会更新。", "ok");
+          stop();
+        } else {
+          setStatus("聚合失败", "failed");
+          log("运行结束，结果：" + run.conclusion + "。日志：" + run.url, "bad");
+          stop();
+        }
+      });
+    }).catch(function () { fail("连接失败，请检查网络。"); });
+  }
+
+  go.addEventListener("click", function () {
+    if (!pw.value) { setStatus("请先填写触发密码", "failed"); return; }
+    go.disabled = true; seen = {}; runId = null;
+    logEl.textContent = "";
+    setStatus("正在提交", "running");
+    log("正在提交聚合任务……");
+    clickedAt = Date.now();
+    call({
+      action: "trigger",
+      inputs: { seed_only: $("mode").value, max_sites: $("sites").value, max_latency_ms: $("lat").value }
+    }).then(function (res) {
+      if (!res.ok) { fail("启动任务失败：" + res.error); return; }
+      try { sessionStorage.setItem("trigger_pw", pw.value); } catch (e) {}
+      log("已提交到分支 " + res.ref + "，等待 GitHub 开始运行……");
+      setStatus("排队中", "running");
+      deadline = Date.now() + 15 * 60 * 1000;
+      timer = setInterval(tick, 5000);
+      setTimeout(tick, 3000);
+    }).catch(function () { fail("启动任务失败：连接不上 /api/trigger"); });
+  });
+
+  // 订阅链接：与本页同目录的结果文件
+  var files = [
+    ["订阅配置", "subscribe.json"],
+    ["站点检测", "sites-check.md"],
+    ["站点检测（表格）", "sites-check.csv"],
+    ["来源检测", "sources-check.md"]
+  ];
+  var ul = $("links");
+  files.forEach(function (f) {
+    var url = new URL(f[1], location.href).href;
+    var li = document.createElement("li");
+    var left = document.createElement("div");
+    var name = document.createElement("div");
+    name.className = "name"; name.textContent = f[0];
+    var a = document.createElement("a");
+    a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = url;
+    left.appendChild(name); left.appendChild(a);
+    var btn = document.createElement("button");
+    btn.type = "button"; btn.className = "small"; btn.textContent = "复制";
+    btn.addEventListener("click", function () {
+      var done = function () { btn.textContent = "已复制"; setTimeout(function () { btn.textContent = "复制"; }, 1500); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, function () {});
+      else { var t = document.createElement("textarea"); t.value = url; document.body.appendChild(t); t.select();
+             try { document.execCommand("copy"); done(); } catch (e) {} document.body.removeChild(t); }
+    });
+    li.appendChild(left); li.appendChild(btn);
+    ul.appendChild(li);
+  });
+
+  log("就绪。填写触发密码后点“开始聚合任务”。");
+})();
+</script>
 </body>
 </html>
