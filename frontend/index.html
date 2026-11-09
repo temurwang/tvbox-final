@@ -151,7 +151,8 @@
       var key = s.name + "|" + state;
       if (seen[key]) return;
       seen[key] = true;
-      if (s.status === "queued") return;
+      // pending / queued / waiting 表示还没轮到执行，不是失败，先不显示
+      if (s.status !== "in_progress" && s.status !== "completed") return;
       if (s.status === "in_progress") { log("开始：" + s.name); return; }
       if (s.conclusion === "success") log("完成：" + s.name, "ok");
       else if (s.conclusion === "skipped") log("跳过：" + s.name);
