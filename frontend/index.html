@@ -1,247 +1,124 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>TVBox源聚合器</title>
-<style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: #f4f7fa;
-    color: #2c3e50;
-    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-  }
-  .card {
-    max-width: 800px;
-    margin: 24px auto;
-    padding: 20px 40px 32px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(44, 62, 80, .08);
-  }
-  @media (max-width: 640px) { .card { margin: 0; border-radius: 0; padding: 16px 16px 28px; } }
-  h1 { text-align: center; font-size: 2rem; margin: .5rem 0 1rem; padding-bottom: .75rem; border-bottom: 1px solid #dfe4e8; }
-  h2 { font-size: 1.35rem; margin: 1.75rem 0 .75rem; padding-bottom: .5rem; border-bottom: 1px solid #dfe4e8; }
-  #status { text-align: center; font-weight: 700; padding: .8rem 1rem; border-radius: 6px; margin-bottom: 1.25rem; }
-  #status.idle    { background: #e8eef3; color: #2c3e50; }
-  #status.running { background: #fff3cd; color: #7a5a00; }
-  #status.success { background: #d4edda; color: #1b5e2f; }
-  #status.failed  { background: #f8d7da; color: #721c24; }
-  .center { text-align: center; }
-  .field { max-width: 22rem; margin: 0 auto 1rem; }
-  label { display: block; font-weight: 600; margin-bottom: .25rem; }
-  input, select {
-    width: 100%; padding: .55rem .7rem; font: inherit; color: inherit;
-    background: #fff; border: 1px solid #c3ccd5; border-radius: 6px;
-  }
-  details { max-width: 22rem; margin: 0 auto 1.25rem; }
-  summary { cursor: pointer; color: #3a6f9f; }
-  details .field { margin: .75rem 0 0; max-width: none; }
-  .hint { margin: .25rem 0 0; font-size: .85rem; color: #66727f; }
-  button {
-    font: inherit; font-weight: 700; color: #fff; background: #3498db;
-    border: 0; border-radius: 6px; padding: .8rem 1.6rem; cursor: pointer;
-  }
-  button:hover { background: #2a86c4; }
-  button:disabled { background: #9bb8cf; cursor: default; }
-  button.small { padding: .3rem .8rem; font-size: .85rem; }
-  input:focus-visible, select:focus-visible, button:focus-visible, summary:focus-visible, a:focus-visible {
-    outline: 2px solid #1f6fa8; outline-offset: 2px;
-  }
-  #log {
-    height: 18rem; overflow-y: auto; margin: 0; padding: 1rem;
-    background: #2e3f50; color: #e8eef3; border-radius: 6px;
-    font: 14px/1.6 ui-monospace, SFMono-Regular, Consolas, "Microsoft YaHei", monospace;
-    white-space: pre-wrap; word-break: break-word;
-  }
-  #log .bad { color: #ff9b94; }
-  #log .ok { color: #8fe0a8; }
-  ul.links { list-style: none; margin: 0; padding: 1rem; background: #edf0f2; border-radius: 6px; }
-  ul.links li { display: flex; gap: .75rem; align-items: center; justify-content: space-between;
-                flex-wrap: wrap; padding: .4rem 0; }
-  ul.links li + li { border-top: 1px solid #dde2e6; }
-  ul.links .name { font-weight: 600; }
-  ul.links a { color: #1f6fa8; word-break: break-all; }
-  .note { margin: .75rem 0 0; font-size: .9rem; color: #66727f; }
-</style>
-</head>
-<body>
-<div class="card">
-  <h1>TVBox源聚合器</h1>
+// Cloudflare Pages Function: /api/trigger
+// 页面上的按钮 -> 这里校验密码 -> 调用 GitHub API 触发 collect-sources 工作流。
+// GitHub 令牌只保存在 Cloudflare 的环境变量里，不会出现在网页代码中。
+//
+// 需要在 Pages 项目 设置 -> 变量和机密 里添加：
+//   GH_DISPATCH_TOKEN  (机密) GitHub 细粒度令牌，仅 tvbox-final 仓库，权限 Actions: Read and write
+//   TRIGGER_PASSWORD   (机密) 你自己定的触发密码
+// 可选（不填则用下面的默认值）：
+//   GH_REPO=temurwang/tvbox-final   GH_REF=feat-tvbox-aggregator-ui   GH_WORKFLOW=collect.yml
 
-  <div id="status" class="idle" role="status" aria-live="polite">状态: 空闲</div>
+const JSON_HEADERS = { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" };
 
-  <div class="center">
-    <details>
-      <summary>高级选项</summary>
-      <div class="field" style="text-align:left">
-        <label for="mode">采集方式</label>
-        <select id="mode">
-          <option value="0">搜索新站点并检测</option>
-          <option value="1">只处理 seed.json，不搜索</option>
-        </select>
-      </div>
-      <div class="field" style="text-align:left">
-        <label for="sites">最多保留站点数</label>
-        <input id="sites" type="number" min="1" max="500" value="150" inputmode="numeric">
-        <p class="hint">只要最快的 20 个，填 20。</p>
-      </div>
-      <div class="field" style="text-align:left">
-        <label for="lat">延迟上限（毫秒）</label>
-        <input id="lat" type="number" min="300" max="20000" value="4000" inputmode="numeric">
-      </div>
-    </details>
-    <button id="go" type="button">开始聚合任务</button>
-  </div>
+const reply = (obj, status = 200) => new Response(JSON.stringify(obj), { status, headers: JSON_HEADERS });
 
-  <h2>实时日志</h2>
-  <pre id="log" aria-label="实时日志"></pre>
+async function sha256(text) {
+  return new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)));
+}
 
-  <h2>聚合订阅链接</h2>
-  <ul class="links" id="links"></ul>
-  <p class="note">聚合完成后，Cloudflare 还需要约 1 到 2 分钟发布新文件，期间链接里仍是上一次的内容。</p>
-</div>
+// 比较两个字符串，耗时不随内容变化
+async function safeEqual(a, b) {
+  const [x, y] = await Promise.all([sha256(a), sha256(b)]);
+  let diff = 0;
+  for (let i = 0; i < x.length; i++) diff |= x[i] ^ y[i];
+  return diff === 0;
+}
 
-<script>
-(function () {
-  var $ = function (id) { return document.getElementById(id); };
-  var go = $("go"), logEl = $("log"), statusEl = $("status");
-  var timer = null, deadline = 0, runId = null, clickedAt = 0, seen = {};
+function clampInt(value, min, max, fallback) {
+  const n = Number.parseInt(value, 10);
+  if (!Number.isFinite(n)) return String(fallback);
+  return String(Math.min(max, Math.max(min, n)));
+}
 
-  function pad(n) { return (n < 10 ? "0" : "") + n; }
-  function log(text, cls) {
-    var d = new Date();
-    var line = document.createElement("div");
-    if (cls) line.className = cls;
-    line.textContent = "[" + pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds()) + "] " + text;
-    logEl.appendChild(line);
-    logEl.scrollTop = logEl.scrollHeight;
+function ghHeaders(token) {
+  return {
+    Accept: "application/vnd.github+json",
+    Authorization: `Bearer ${token}`,
+    "X-GitHub-Api-Version": "2022-11-28",
+    "User-Agent": "tvbox-trigger-page",
+  };
+}
+
+export async function onRequestPost({ request, env }) {
+  if (!env.TRIGGER_PASSWORD || !env.GH_DISPATCH_TOKEN) {
+    return reply({ ok: false, error: "服务端还没配置 TRIGGER_PASSWORD 和 GH_DISPATCH_TOKEN" }, 500);
   }
-  function setStatus(text, cls) { statusEl.textContent = "状态: " + text; statusEl.className = cls; }
 
-  function call(payload) {
-    return fetch("/api/trigger", {
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return reply({ ok: false, error: "请求格式不对" }, 400);
+  }
+
+  if (!(await safeEqual(String(body.password ?? ""), env.TRIGGER_PASSWORD))) {
+    return reply({ ok: false, error: "密码不对" }, 401);
+  }
+
+  const repo = env.GH_REPO || "temurwang/tvbox-final";
+  const ref = env.GH_REF || "feat-tvbox-aggregator-ui";
+  const workflow = env.GH_WORKFLOW || "collect.yml";
+  const base = `https://api.github.com/repos/${repo}/actions/workflows/${workflow}`;
+
+  if (body.action === "status") {
+    const r = await fetch(`${base}/runs?per_page=3`, { headers: ghHeaders(env.GH_DISPATCH_TOKEN) });
+    if (!r.ok) return reply({ ok: false, error: `读取运行状态失败（GitHub ${r.status}）` }, 502);
+    const data = await r.json();
+    const runs = (data.workflow_runs || []).map((x) => ({
+      id: x.id,
+      status: x.status,           // queued / in_progress / completed
+      conclusion: x.conclusion,   // success / failure / cancelled / null
+      created_at: x.created_at,
+      event: x.event,
+      branch: x.head_branch,
+      url: x.html_url,
+    }));
+    return reply({ ok: true, runs });
+  }
+
+  if (body.action === "steps") {
+    // 某次运行的各个步骤进度（页面“实时日志”用）
+    const runId = String(body.run_id ?? "");
+    if (!/^\d{1,20}$/.test(runId)) return reply({ ok: false, error: "run_id 不对" }, 400);
+    const r = await fetch(`https://api.github.com/repos/${repo}/actions/runs/${runId}/jobs`, {
+      headers: ghHeaders(env.GH_DISPATCH_TOKEN),
+    });
+    if (!r.ok) return reply({ ok: false, error: `读取步骤失败（GitHub ${r.status}）` }, 502);
+    const data = await r.json();
+    const steps = [];
+    for (const job of data.jobs || []) {
+      for (const st of job.steps || []) {
+        steps.push({ name: st.name, status: st.status, conclusion: st.conclusion,
+                     started_at: st.started_at, completed_at: st.completed_at });
+      }
+    }
+    return reply({ ok: true, steps });
+  }
+
+  if (body.action === "trigger") {
+    const i = body.inputs || {};
+    const inputs = {
+      seed_only: i.seed_only === "1" ? "1" : "0",
+      max_sites: clampInt(i.max_sites, 1, 500, 150),
+      max_latency_ms: clampInt(i.max_latency_ms, 300, 20000, 4000),
+    };
+    const r = await fetch(`${base}/dispatches`, {
       method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(payload)
-    }).then(function (r) {
-      return r.json().catch(function () {
-        return { ok: false, error: "服务端返回的不是 JSON（HTTP " + r.status + "），/api/trigger 可能还没部署" };
-      });
+      headers: { ...ghHeaders(env.GH_DISPATCH_TOKEN), "content-type": "application/json" },
+      body: JSON.stringify({ ref, inputs }),
     });
+    if (r.status === 204) return reply({ ok: true, ref, inputs });
+    let detail = "";
+    try { detail = (await r.json()).message || ""; } catch { /* ignore */ }
+    const hint = r.status === 404 ? "（仓库、工作流文件名或分支不对，或令牌没有该仓库的权限）"
+               : r.status === 403 || r.status === 401 ? "（令牌无效，或缺少 Actions 读写权限）"
+               : r.status === 422 ? "（分支上没有这个工作流，或参数不被接受）" : "";
+    return reply({ ok: false, error: `GitHub 返回 ${r.status}${hint} ${detail}`.trim() }, 502);
   }
 
-  function stop() { if (timer) { clearInterval(timer); timer = null; } go.disabled = false; }
-  function fail(text) { setStatus("失败", "failed"); log(text, "bad"); stop(); }
+  return reply({ ok: false, error: "未知操作" }, 400);
+}
 
-  var STEP_TEXT = { queued: "排队", in_progress: "进行中", completed: "完成" };
-
-  function reportSteps(steps) {
-    steps.forEach(function (s) {
-      var state = s.status === "completed" ? (s.conclusion || "completed") : s.status;
-      var key = s.name + "|" + state;
-      if (seen[key]) return;
-      seen[key] = true;
-      // pending / queued / waiting 表示还没轮到执行，不是失败，先不显示
-      if (s.status !== "in_progress" && s.status !== "completed") return;
-      if (s.status === "in_progress") { log("开始：" + s.name); return; }
-      if (s.conclusion === "success") log("完成：" + s.name, "ok");
-      else if (s.conclusion === "skipped") log("跳过：" + s.name);
-      else log("失败：" + s.name + "（" + s.conclusion + "）", "bad");
-    });
-  }
-
-  function tick() {
-    if (!timer) return;   // 已经结束或还没开始，忽略多余的定时回调
-    if (Date.now() > deadline) { fail("超过 15 分钟仍未结束，请到 GitHub 的 Actions 页面查看。"); return; }
-    call({ action: "status" }).then(function (res) {
-      if (!res.ok) { fail(res.error); return; }
-      if (!runId) {
-        // 找到点击之后创建的那次运行（留 60 秒余量应对时钟差）
-        var mine = res.runs.filter(function (r) { return new Date(r.created_at).getTime() >= clickedAt - 60000; })[0];
-        if (!mine) return;
-        runId = mine.id;
-        log("GitHub 已接收任务，运行编号 " + runId);
-      }
-      var run = res.runs.filter(function (r) { return r.id === runId; })[0];
-      if (!run) return;
-      return call({ action: "steps", run_id: runId }).then(function (st) {
-        if (st.ok) reportSteps(st.steps);
-        // 只有 completed 才算结束；queued / pending / requested / waiting 都还没跑完
-        if (run.status !== "completed") {
-          setStatus(run.status === "in_progress" ? "运行中" : "排队中", "running");
-          return;
-        }
-        if (run.conclusion === "success") {
-          setStatus("聚合完成", "success");
-          log("全部完成。约 1 到 2 分钟后下面的链接会更新。", "ok");
-          stop();
-        } else {
-          setStatus("聚合失败", "failed");
-          log("运行结束，结果：" + run.conclusion + "。日志：" + run.url, "bad");
-          stop();
-        }
-      });
-    }).catch(function () { fail("连接失败，请检查网络。"); });
-  }
-
-  go.addEventListener("click", function () {
-    go.disabled = true; seen = {}; runId = null;
-    logEl.textContent = "";
-    setStatus("正在提交", "running");
-    log("正在提交聚合任务……");
-    clickedAt = Date.now();
-    call({
-      action: "trigger",
-      inputs: { seed_only: $("mode").value, max_sites: $("sites").value, max_latency_ms: $("lat").value }
-    }).then(function (res) {
-      if (!res.ok) { setStatus("未启动", "failed"); log("启动任务失败：" + res.error, "bad"); stop(); return; }
-      if (res.joined) {
-        runId = res.run_id;
-        log("已有任务正在运行（编号 " + runId + "），直接跟随它的进度。");
-      } else {
-        log("已提交到分支 " + res.ref + "，等待 GitHub 开始运行……");
-      }
-      setStatus("排队中", "running");
-      deadline = Date.now() + 15 * 60 * 1000;
-      timer = setInterval(tick, 5000);
-      setTimeout(tick, 3000);
-    }).catch(function () { fail("启动任务失败：连接不上 /api/trigger"); });
-  });
-
-  // 订阅链接：与本页同目录的结果文件
-  var files = [
-    ["订阅配置", "subscribe.json"],
-    ["站点检测", "sites-check.md"],
-    ["站点检测（表格）", "sites-check.csv"],
-    ["来源检测", "sources-check.md"]
-  ];
-  var ul = $("links");
-  files.forEach(function (f) {
-    var url = new URL(f[1], location.href).href;   // 与本页同目录（页面在 /frontend/ 下，链接就带 /frontend/）
-    var li = document.createElement("li");
-    var left = document.createElement("div");
-    var name = document.createElement("div");
-    name.className = "name"; name.textContent = f[0];
-    var a = document.createElement("a");
-    a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = url;
-    left.appendChild(name); left.appendChild(a);
-    var btn = document.createElement("button");
-    btn.type = "button"; btn.className = "small"; btn.textContent = "复制";
-    btn.addEventListener("click", function () {
-      var done = function () { btn.textContent = "已复制"; setTimeout(function () { btn.textContent = "复制"; }, 1500); };
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, function () {});
-      else { var t = document.createElement("textarea"); t.value = url; document.body.appendChild(t); t.select();
-             try { document.execCommand("copy"); done(); } catch (e) {} document.body.removeChild(t); }
-    });
-    li.appendChild(left); li.appendChild(btn);
-    ul.appendChild(li);
-  });
-
-  log("就绪。点“开始聚合任务”开始。");
-})();
-</script>
-</body>
-</html>
+export async function onRequest() {
+  return reply({ ok: false, error: "请使用 POST" }, 405);
+}
