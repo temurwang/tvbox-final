@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-11-09T05:05:42+00:00",
+  "note": "Checks run from GitHub's overseas runner; FAIL(kept) entries are trusted sites kept because TRUST_SEED=1 (they may block datacenter IPs). csp_/js seed sites need the app runtime and are not checked.",
+  "summary": {
+    "api_total": 0,
+    "api_passed": 0,
+    "api_failed": 0,
+    "api_in_output": 0,
+    "seed_sites_kept": 40,
+    "seed_sites_dropped": 0,
+    "reasons": {}
+  },
+  "results": [],
+  "seed_sites_dropped": [],
+  "lives": [
+    {
+      "name": "Gather「果」",
+      "url": "https://tv.tmxk.kdns.fr/yplrnuc7",
+      "reachable": false,
+      "latency_ms": null
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-11-09T05:05:42+00:00",
+  "seed_only": false,
+  "seed_loaded": true,
+  "untrusted_sources_parsed": 0,
+  "api_candidates": 0,
+  "api_passed": 0,
+  "api_in_output": 0,
+  "seed_sites_kept": 40,
+  "seed_sites_dropped": 0,
+  "total_sites_in_output": 40,
+  "trust_seed": true,
+  "validation_reasons": {},
+  "latency_ms": null,
+  "threshold_ms": 4000
+}
