@@ -37,6 +37,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 提交前要和远端合并，需要完整历史
 
       - uses: actions/setup-python@v5
         with:
@@ -67,10 +69,21 @@ jobs:
           git add frontend
           if git diff --cached --quiet; then
             echo "No changes to commit"
-          else
-            git commit -m "chore: update sources $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push
+            exit 0
           fi
+          git commit -m "chore: update sources $(date -u +'%Y-%m-%d %H:%M UTC')"
+          # 运行期间如果有人（或另一次运行）往同一分支推了代码，直接 push 会被拒绝。
+          # 先把远端的新提交合进来再推；冲突时以本次生成的文件为准。
+          for i in 1 2 3 4 5; do
+            if git pull --rebase -X theirs origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME"; then
+              exit 0
+            fi
+            echo "push failed (attempt $i), retrying..."
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 3))
+          done
+          echo "push failed after 5 attempts"
+          exit 1
 
       - name: Upload results as artifact
         uses: actions/upload-artifact@v4
