@@ -220,7 +220,7 @@
   ];
   var ul = $("links");
   files.forEach(function (f) {
-    var url = location.origin + "/" + f[1];   // 结果文件放在站点根目录，链接里不带 frontend
+    var url = new URL(f[1], location.href).href;   // 与本页同目录（页面在 /frontend/ 下，链接就带 /frontend/）
     var li = document.createElement("li");
     var left = document.createElement("div");
     var name = document.createElement("div");
