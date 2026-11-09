@@ -47,8 +47,9 @@ jobs:
 
       - name: Collect and validate sources
         env:
-          # GitHub 代码搜索必须带令牌，Actions 自带的即可
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GitHub 代码搜索必须带令牌。自带的 GITHUB_TOKEN 常被限流(429)，
+          # 优先用你自己的 GH_PAT，没配置时退回自带令牌
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           SEED_ONLY: ${{ inputs.seed_only || '0' }}
           TRUST_SEED: ${{ inputs.trust_seed || '1' }}
           MAX_LATENCY_MS: ${{ inputs.max_latency_ms || '4000' }}
