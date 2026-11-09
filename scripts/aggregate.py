@@ -20,6 +20,8 @@ Outputs (in OUT_DIR, default "frontend")
   subscribe.json        -> the TVBox config described above
   subscribe-check.json  -> per-site detection results
   subscribe-report.json -> summary statistics
+  sources-check.json/.md -> one row per source file (download status, sites found,
+                            how many passed), plus the code-search request log
 
 A MacCMS site passes validation when ?ac=list returns a non-empty "class" list
 and ?ac=detail&pg=1 returns a non-empty "list" of videos within the latency
@@ -57,6 +59,7 @@ TRUST_SEED = os.environ.get("TRUST_SEED", "1") == "1"
 SEED_BASE_URL = os.environ.get("SEED_BASE_URL", "").strip()
 OUT_DIR = os.environ.get("OUT_DIR", "frontend")
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SEARCH_LOG = []  # one entry per code-search request (for the per-source report)
 
 # Site names containing any of these (case-insensitive) are skipped.
 # Override with the EXCLUDE_KEYWORDS env var (comma separated); set it empty to disable.
@@ -108,10 +111,10 @@ def gh_get(params):
     if GH_TOKEN:
         headers["Authorization"] = f"Bearer {GH_TOKEN}"
     r = None
-    for attempt in range(3):
+    for attempt in range(6):
         r = requests.get("https://api.github.com/search/code", params=params,
                          headers=headers, timeout=30)
-        if r.status_code in (403, 429) and attempt < 2:
+        if r.status_code in (403, 429) and attempt < 5:
             wait = int(r.headers.get("Retry-After") or 0)
             reset = r.headers.get("X-RateLimit-Reset")
             if not wait and reset:
@@ -142,6 +145,8 @@ def search_sources():
         stop = False
         for page in (1, 2, 3):
             r = gh_get({"q": q, "per_page": 100, "page": page})
+            SEARCH_LOG.append({"query": q, "page": page, "http_status": r.status_code,
+                               "items": len(r.json().get("items", [])) if r.ok else None})
             if not r.ok:
                 print(f"  search '{q}' page {page} failed: HTTP {r.status_code} {r.text[:200]}")
                 stop = r.status_code in (403, 429)
@@ -179,14 +184,19 @@ def parse_json_lenient(text):
 
 
 def download_source(url):
+    """-> (url, data or None, reason)."""
     try:
         r = requests.get(url, headers={"User-Agent": UA_API}, timeout=15)
         if not r.ok:
-            return url, None
+            return url, None, f"http_{r.status_code}"
         data = parse_json_lenient(r.text)
-        return url, data if isinstance(data, dict) else None
+        if isinstance(data, dict):
+            return url, data, "ok"
+        return url, None, "not_json_object"
+    except requests.Timeout:
+        return url, None, "timeout"
     except Exception:
-        return url, None
+        return url, None, "download_error"
 
 
 def load_json_file(name):
@@ -211,7 +221,7 @@ def is_api_site(site):
             and site["api"].startswith(("http://", "https://")))
 
 
-def collect_sites(data, src_url, trusted):
+def collect_sites(data, src_url, trusted, label=""):
     """MacCMS API sites from a "sites" list and/or an "api_site" dict."""
     raw = list(data["sites"]) if isinstance(data.get("sites"), list) else []
     api_site = data.get("api_site")
@@ -230,7 +240,8 @@ def collect_sites(data, src_url, trusted):
             continue
         out.append({"key": str(site["key"]),
                     "name": str(site.get("name") or site["key"]).strip(),
-                    "api": site["api"], "trusted": trusted})
+                    "api": site["api"], "trusted": trusted,
+                    "source": label or src_url})
     return out
 
 
@@ -288,7 +299,8 @@ def build_candidates(sites):
         if not s["trusted"] and suspicious_url(api):
             continue  # only filters untrusted sites
         seen.add(api)
-        out.append({"key": s["key"], "name": s["name"], "api": api, "trusted": s["trusted"]})
+        out.append({"key": s["key"], "name": s["name"], "api": api, "trusted": s["trusted"],
+                    "source": s.get("source", "")})
     return out
 
 
@@ -381,6 +393,71 @@ def write_json(name, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
+def write_source_report(now, seed, extra_trusted, sources, download_reason,
+                        found_per_source, checks, kept_seed_sites, dropped_seed_sites,
+                        live_checks):
+    """sources-check.json / sources-check.md: one row per source file."""
+    by_source = {}
+    for c in checks:
+        st = by_source.setdefault(c["source"], {"candidates": 0, "passed": 0, "in_output": 0,
+                                                "fastest_ms": None})
+        st["candidates"] += 1
+        st["passed"] += 1 if c["passed"] else 0
+        st["in_output"] += 1 if c.get("in_output") else 0
+        if c["passed"] and (st["fastest_ms"] is None or c["latency_ms"] < st["fastest_ms"]):
+            st["fastest_ms"] = c["latency_ms"]
+
+    rows = []
+
+    def add(label, trusted, status, note=""):
+        st = by_source.get(label, {})
+        rows.append({
+            "source": label, "trusted": trusted, "status": status, "note": note,
+            "api_sites_found": found_per_source.get(label, 0),
+            "api_candidates": st.get("candidates", 0),
+            "api_passed": st.get("passed", 0),
+            "api_in_output": st.get("in_output", 0),
+            "fastest_ms": st.get("fastest_ms"),
+        })
+
+    if seed:
+        add("seed.json", True, "loaded",
+            f"{len(kept_seed_sites)} non-API sites kept as-is, {len(dropped_seed_sites)} dropped")
+    if extra_trusted:
+        add("api_sites.json", True, "loaded")
+    for u in sources:
+        why = download_reason.get(u, "unknown")
+        add(u, False, "parsed" if why == "ok" else why)
+
+    summary = {"generated_at": now, "sources_total": len(sources),
+               "sources_parsed": sum(1 for u in sources if download_reason.get(u) == "ok"),
+               "search_requests": SEARCH_LOG}
+    write_json("sources-check.json", {**summary, "sources": rows,
+                                      "seed_sites_dropped": dropped_seed_sites,
+                                      "lives": live_checks})
+
+    lines = [f"# Source check ({now})", "",
+             f"- untrusted source files: {summary['sources_parsed']}/{summary['sources_total']} parsed",
+             f"- code-search requests: {len(SEARCH_LOG)}", ""]
+    for q in SEARCH_LOG:
+        lines.append(f"  - `{q['query']}` page {q['page']}: HTTP {q['http_status']}, "
+                     f"items {q['items']}")
+    lines += ["", "| source | trusted | status | found | candidates | passed | in output | fastest ms |",
+              "|---|---|---|---|---|---|---|---|"]
+    for r in rows:
+        status = r["status"] + (f" ({r['note']})" if r["note"] else "")
+        lines.append(f"| {r['source']} | {'yes' if r['trusted'] else 'no'} | {status} | "
+                     f"{r['api_sites_found']} | {r['api_candidates']} | {r['api_passed']} | "
+                     f"{r['api_in_output']} | {r['fastest_ms'] if r['fastest_ms'] is not None else '-'} |")
+    lines += ["", "## Live sources", "", "| name | url | reachable | ms |", "|---|---|---|---|"]
+    for lc in live_checks:
+        lines.append(f"| {lc['name']} | {lc['url']} | {'yes' if lc['reachable'] else 'no'} | "
+                     f"{lc['latency_ms'] if lc['latency_ms'] is not None else '-'} |")
+    os.makedirs(OUT_DIR, exist_ok=True)
+    with open(os.path.join(OUT_DIR, "sources-check.md"), "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+
+
 # ------------------------------------------------------------------------- Main
 def main():
     print(f"== 1/4 collecting sources (SEED_ONLY={'1' if SEED_ONLY else '0'}, "
@@ -395,19 +472,23 @@ def main():
     print("== 2/4 downloading sources")
     with ThreadPoolExecutor(WORKERS) as ex:
         downloads = list(ex.map(download_source, sources))
-    ok_sources = [(u, d) for u, d in downloads if d]
+    ok_sources = [(u, d) for u, d, _ in downloads if d]
+    download_reason = {u: why for u, _, why in downloads}
     print(f"   {len(ok_sources)}/{len(sources)} parsed")
 
     # Trusted first so they win de-duplication and survive the candidate cap.
     entries = []
     if seed:
-        entries.append(("", seed, True))
+        entries.append(("", seed, True, "seed.json"))
     if extra_trusted:
-        entries.append(("", extra_trusted, True))
-    entries += [(u, d, False) for u, d in ok_sources]
+        entries.append(("", extra_trusted, True, "api_sites.json"))
+    entries += [(u, d, False, u) for u, d in ok_sources]
     all_sites = []
-    for src_url, data, trusted in entries:
-        all_sites.extend(collect_sites(data, src_url, trusted))
+    found_per_source = Counter()
+    for src_url, data, trusted, label in entries:
+        found = collect_sites(data, src_url, trusted, label)
+        found_per_source[label] += len(found)
+        all_sites.extend(found)
 
     candidates = build_candidates(all_sites)[:MAX_CANDIDATES]
     trusted_n = sum(1 for s in candidates if s["trusted"])
@@ -435,7 +516,7 @@ def main():
             good_api.append((lat if passed else MAX_LATENCY_MS, s))
         checks.append({
             "name": s["name"], "api": s["api"], "trusted": s["trusted"],
-            "passed": passed, "reason": "ok" if passed else reason,
+            "source": s.get("source", ""), "passed": passed, "reason": "ok" if passed else reason,
             "latency_ms": lat, "kept": keep,
         })
     # trusted sites first, then fastest first
@@ -482,6 +563,9 @@ def main():
     print(f"   subscribe.json: {len(kept_seed_sites)} seed sites + {len(api_entries)} API sites")
 
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    write_source_report(now, seed, extra_trusted, sources, download_reason,
+                        found_per_source, checks, kept_seed_sites, dropped_seed_sites,
+                        live_checks)
     lats = [c["latency_ms"] for c in checks if c["passed"]]  # passed sites only
     write_json("subscribe-check.json", {
         "generated_at": now,
