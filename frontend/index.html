@@ -161,6 +161,7 @@
   }
 
   function tick() {
+    if (!timer) return;   // 已经结束或还没开始，忽略多余的定时回调
     if (Date.now() > deadline) { fail("超过 15 分钟仍未结束，请到 GitHub 的 Actions 页面查看。"); return; }
     call({ action: "status" }).then(function (res) {
       if (!res.ok) { fail(res.error); return; }
@@ -175,8 +176,11 @@
       if (!run) return;
       return call({ action: "steps", run_id: runId }).then(function (st) {
         if (st.ok) reportSteps(st.steps);
-        if (run.status === "queued") { setStatus("排队中", "running"); return; }
-        if (run.status === "in_progress") { setStatus("运行中", "running"); return; }
+        // 只有 completed 才算结束；queued / pending / requested / waiting 都还没跑完
+        if (run.status !== "completed") {
+          setStatus(run.status === "in_progress" ? "运行中" : "排队中", "running");
+          return;
+        }
         if (run.conclusion === "success") {
           setStatus("聚合完成", "success");
           log("全部完成。约 1 到 2 分钟后下面的链接会更新。", "ok");
