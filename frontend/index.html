@@ -74,10 +74,6 @@
   <div id="status" class="idle" role="status" aria-live="polite">状态: 空闲</div>
 
   <div class="center">
-    <div class="field">
-      <label for="pw">触发密码</label>
-      <input id="pw" type="password" autocomplete="current-password">
-    </div>
     <details>
       <summary>高级选项</summary>
       <div class="field" style="text-align:left">
@@ -111,10 +107,8 @@
 <script>
 (function () {
   var $ = function (id) { return document.getElementById(id); };
-  var pw = $("pw"), go = $("go"), logEl = $("log"), statusEl = $("status");
+  var go = $("go"), logEl = $("log"), statusEl = $("status");
   var timer = null, deadline = 0, runId = null, clickedAt = 0, seen = {};
-
-  try { pw.value = sessionStorage.getItem("trigger_pw") || ""; } catch (e) {}
 
   function pad(n) { return (n < 10 ? "0" : "") + n; }
   function log(text, cls) {
@@ -128,7 +122,6 @@
   function setStatus(text, cls) { statusEl.textContent = "状态: " + text; statusEl.className = cls; }
 
   function call(payload) {
-    payload.password = pw.value;
     return fetch("/api/trigger", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -195,7 +188,6 @@
   }
 
   go.addEventListener("click", function () {
-    if (!pw.value) { setStatus("请先填写触发密码", "failed"); return; }
     go.disabled = true; seen = {}; runId = null;
     logEl.textContent = "";
     setStatus("正在提交", "running");
@@ -205,9 +197,13 @@
       action: "trigger",
       inputs: { seed_only: $("mode").value, max_sites: $("sites").value, max_latency_ms: $("lat").value }
     }).then(function (res) {
-      if (!res.ok) { fail("启动任务失败：" + res.error); return; }
-      try { sessionStorage.setItem("trigger_pw", pw.value); } catch (e) {}
-      log("已提交到分支 " + res.ref + "，等待 GitHub 开始运行……");
+      if (!res.ok) { setStatus("未启动", "failed"); log("启动任务失败：" + res.error, "bad"); stop(); return; }
+      if (res.joined) {
+        runId = res.run_id;
+        log("已有任务正在运行（编号 " + runId + "），直接跟随它的进度。");
+      } else {
+        log("已提交到分支 " + res.ref + "，等待 GitHub 开始运行……");
+      }
       setStatus("排队中", "running");
       deadline = Date.now() + 15 * 60 * 1000;
       timer = setInterval(tick, 5000);
@@ -224,7 +220,7 @@
   ];
   var ul = $("links");
   files.forEach(function (f) {
-    var url = new URL(f[1], location.href).href;
+    var url = location.origin + "/" + f[1];   // 结果文件放在站点根目录，链接里不带 frontend
     var li = document.createElement("li");
     var left = document.createElement("div");
     var name = document.createElement("div");
@@ -244,7 +240,7 @@
     ul.appendChild(li);
   });
 
-  log("就绪。填写触发密码后点“开始聚合任务”。");
+  log("就绪。点“开始聚合任务”开始。");
 })();
 </script>
 </body>
