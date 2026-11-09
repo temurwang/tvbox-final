@@ -1,0 +1,80 @@
+name: collect-sources
+
+on:
+  # 手动触发：Actions 页面 -> collect-sources -> Run workflow
+  workflow_dispatch:
+    inputs:
+      seed_only:
+        description: "只用 seed.json / api_sites.json，不去 GitHub 搜索新源 (1=是, 0=否)"
+        default: "0"
+        type: choice
+        options: ["0", "1"]
+      trust_seed:
+        description: "seed 里的 API 站点即使检测失败也保留 (1=是, 0=否)"
+        default: "1"
+        type: choice
+        options: ["1", "0"]
+      max_latency_ms:
+        description: "延迟阈值(毫秒)，超过则丢弃"
+        default: "4000"
+      max_sites:
+        description: "最多新增多少个 MacCMS API 站点"
+        default: "150"
+  # 定时触发：每天北京时间 06:30（UTC 22:30）。不需要可整段删除
+  schedule:
+    - cron: "30 22 * * *"
+
+permissions:
+  contents: write   # 允许把结果提交回仓库
+
+concurrency:
+  group: collect-sources
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Collect and validate sources
+        env:
+          # GitHub 代码搜索必须带令牌，Actions 自带的即可
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SEED_ONLY: ${{ inputs.seed_only || '0' }}
+          TRUST_SEED: ${{ inputs.trust_seed || '1' }}
+          MAX_LATENCY_MS: ${{ inputs.max_latency_ms || '4000' }}
+          MAX_SITES: ${{ inputs.max_sites || '150' }}
+          # seed 里「儿童」站点用的是 ./api/drpy2.min.js、./js/兔小贝.js 这类相对路径，
+          # 需要指向这些文件实际所在的目录；没有这些文件就会 404，可把这行删掉（该站点会被丢弃）
+          SEED_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/
+          OUT_DIR: frontend
+        run: python scripts/aggregate.py
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add frontend/subscribe.json frontend/subscribe-check.json frontend/subscribe-report.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update sources $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
+
+      - name: Upload results as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: subscribe
+          path: frontend/*.json
+          retention-days: 7
