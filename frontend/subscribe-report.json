@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-10T04:14:11+00:00",
+  "generated_at": "2026-11-10T10:16:29+00:00",
   "seed_only": false,
   "seed_loaded": true,
   "untrusted_sources_parsed": 84,
-  "api_candidates": 210,
+  "api_candidates": 211,
   "api_passed": 54,
   "api_in_output": 54,
   "seed_sites_kept": 40,
@@ -19,12 +19,13 @@
     "timeout": 16,
     "http_404": 7,
     "http_410": 1,
+    "too_slow": 1,
     "http_523": 1
   },
   "latency_ms": {
-    "min": 127,
-    "median": 526,
-    "max": 1734
+    "min": 101,
+    "median": 361,
+    "max": 1712
   },
   "threshold_ms": 4000
 }
