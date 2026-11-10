@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T10:16:29+00:00",
+  "generated_at": "2026-11-10T11:04:13+00:00",
   "seed_only": false,
   "seed_loaded": true,
   "untrusted_sources_parsed": 84,
@@ -16,16 +16,15 @@
     "ok": 54,
     "not_json": 24,
     "http_429": 4,
-    "timeout": 16,
+    "timeout": 17,
     "http_404": 7,
     "http_410": 1,
-    "too_slow": 1,
     "http_523": 1
   },
   "latency_ms": {
-    "min": 101,
-    "median": 361,
-    "max": 1712
+    "min": 87,
+    "median": 369,
+    "max": 3315
   },
   "threshold_ms": 4000
 }
