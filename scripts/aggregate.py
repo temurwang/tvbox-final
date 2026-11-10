@@ -64,7 +64,7 @@ SEARCH_LOG = []  # one entry per code-search request (for the per-source report)
 
 # Site names containing any of these (case-insensitive) are skipped.
 # Override with the EXCLUDE_KEYWORDS env var (comma separated); set it empty to disable.
-DEFAULT_EXCLUDE = "🔞,18+,18禁,成人,福利,情色,色情,涩,黄色"
+DEFAULT_EXCLUDE = ""
 EXCLUDE_KEYWORDS = [k.strip().lower()
                     for k in os.environ.get("EXCLUDE_KEYWORDS", DEFAULT_EXCLUDE).split(",")
                     if k.strip()]
