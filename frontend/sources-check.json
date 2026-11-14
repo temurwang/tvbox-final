@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T02:33:19+00:00",
+  "generated_at": "2026-11-14T03:15:58+00:00",
   "sources_total": 100,
   "sources_parsed": 83,
   "search_requests": [
@@ -112,7 +112,7 @@
       "api_candidates": 17,
       "api_passed": 2,
       "api_in_output": 2,
-      "fastest_ms": 291
+      "fastest_ms": 302
     },
     {
       "source": "https://raw.githubusercontent.com/swirldawn/swirldawn.github.io/efe8c649f8f175a3352b9474ff6215efb7c1cc0c/tvbox.json",
@@ -123,7 +123,7 @@
       "api_candidates": 27,
       "api_passed": 5,
       "api_in_output": 5,
-      "fastest_ms": 188
+      "fastest_ms": 141
     },
     {
       "source": "https://raw.githubusercontent.com/ylxdy/IPTV/a12b085cfe580069830c7aa7e7394213d80e03d8/tvbox.json",
@@ -145,7 +145,7 @@
       "api_candidates": 1,
       "api_passed": 1,
       "api_in_output": 1,
-      "fastest_ms": 1857
+      "fastest_ms": 1300
     },
     {
       "source": "https://raw.githubusercontent.com/zys8119/react/7c18a538839e5f6b81aeebf2daa8e692290faadc/tvbox.json",
@@ -189,7 +189,7 @@
       "api_candidates": 4,
       "api_passed": 2,
       "api_in_output": 2,
-      "fastest_ms": 278
+      "fastest_ms": 106
     },
     {
       "source": "https://raw.githubusercontent.com/franksun1211/TVBOX/aac9dfb5393890d61b9566b6c09d7d710b8f1347/sun.json",
@@ -222,7 +222,7 @@
       "api_candidates": 62,
       "api_passed": 7,
       "api_in_output": 7,
-      "fastest_ms": 600
+      "fastest_ms": 625
     },
     {
       "source": "https://raw.githubusercontent.com/xiongjian83/TvBox/3b438d985cef3923068243c28d12e5d9f242b46d/YZ.json",
@@ -255,7 +255,7 @@
       "api_candidates": 13,
       "api_passed": 3,
       "api_in_output": 3,
-      "fastest_ms": 212
+      "fastest_ms": 177
     },
     {
       "source": "https://raw.githubusercontent.com/Mainstayz/box/dc3f999dd5caf6b1b917873295256c99ae5b773c/tvbox.json",
@@ -321,7 +321,7 @@
       "api_candidates": 2,
       "api_passed": 1,
       "api_in_output": 1,
-      "fastest_ms": 368
+      "fastest_ms": 179
     },
     {
       "source": "https://raw.githubusercontent.com/AlanTse1314/TVBox-18/1d88f6dc52a0de19a217d477f131cd8afd963f43/tvbox2.json",
@@ -431,7 +431,7 @@
       "api_candidates": 12,
       "api_passed": 2,
       "api_in_output": 2,
-      "fastest_ms": 192
+      "fastest_ms": 264
     },
     {
       "source": "https://raw.githubusercontent.com/tiantaiyx/tvbox/d97a57c12bc0ac189cda5acfe530394e03d80371/0706.json",
@@ -475,7 +475,7 @@
       "api_candidates": 6,
       "api_passed": 5,
       "api_in_output": 5,
-      "fastest_ms": 434
+      "fastest_ms": 366
     },
     {
       "source": "https://raw.githubusercontent.com/zyscdx/tvbox/e5f6e290f664356ba6c4132f6b5fa088dacabc5d/fhvk.json",
@@ -495,9 +495,9 @@
       "note": "",
       "api_sites_found": 8,
       "api_candidates": 5,
-      "api_passed": 1,
-      "api_in_output": 1,
-      "fastest_ms": 586
+      "api_passed": 2,
+      "api_in_output": 2,
+      "fastest_ms": 994
     },
     {
       "source": "https://raw.githubusercontent.com/franksun1211/TVBOX/aac9dfb5393890d61b9566b6c09d7d710b8f1347/0903.json",
@@ -552,7 +552,7 @@
       "api_candidates": 6,
       "api_passed": 4,
       "api_in_output": 4,
-      "fastest_ms": 162
+      "fastest_ms": 111
     },
     {
       "source": "https://raw.githubusercontent.com/swhtv/111/86d67db59d229aea487c3bbf1cc4533836bb63a8/hua.json",
@@ -574,7 +574,7 @@
       "api_candidates": 9,
       "api_passed": 4,
       "api_in_output": 4,
-      "fastest_ms": 378
+      "fastest_ms": 76
     },
     {
       "source": "https://raw.githubusercontent.com/a736240087/tvbox/5e6ebbfc744747104f9c214a33935ee533a15ad5/2.json",
@@ -618,7 +618,7 @@
       "api_candidates": 2,
       "api_passed": 1,
       "api_in_output": 1,
-      "fastest_ms": 359
+      "fastest_ms": 112
     },
     {
       "source": "https://raw.githubusercontent.com/s14685/tv/ba297bfa6cc669ab89a55dc8c543831af1c022c4/xc.json",
@@ -794,7 +794,7 @@
       "api_candidates": 2,
       "api_passed": 2,
       "api_in_output": 2,
-      "fastest_ms": 303
+      "fastest_ms": 48
     },
     {
       "source": "https://raw.githubusercontent.com/ellondoa/Yoursmile7-TVBox/42a9a6b6db2d01d1f8eabf40eb525cc1aa652696/XC.json",
@@ -816,7 +816,7 @@
       "api_candidates": 6,
       "api_passed": 3,
       "api_in_output": 3,
-      "fastest_ms": 198
+      "fastest_ms": 153
     },
     {
       "source": "https://raw.githubusercontent.com/Newtxin/tvbox/d07b4c987056fba4af1ce5ca7c139161c9b11972/015.json",
@@ -915,7 +915,7 @@
       "api_candidates": 12,
       "api_passed": 4,
       "api_in_output": 4,
-      "fastest_ms": 152
+      "fastest_ms": 86
     },
     {
       "source": "https://raw.githubusercontent.com/jixiejishu/zytzx/ef0d8ce1a08bb4ef250feb32788b1deae012236c/ftyzx.json",
@@ -1058,7 +1058,7 @@
       "api_candidates": 2,
       "api_passed": 1,
       "api_in_output": 1,
-      "fastest_ms": 1178
+      "fastest_ms": 1151
     },
     {
       "source": "https://raw.githubusercontent.com/jane3824/TV/84d2da9193231bc34dda9c95780e4cb36c635e1b/ok.json",
@@ -1146,7 +1146,7 @@
       "api_candidates": 1,
       "api_passed": 1,
       "api_in_output": 1,
-      "fastest_ms": 254
+      "fastest_ms": 170
     },
     {
       "source": "https://raw.githubusercontent.com/xibao999/x/c836dd27a08687548b3f5ba1061a2fc9dfa4b0d7/b.json",
