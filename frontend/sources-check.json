@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T03:15:58+00:00",
+  "generated_at": "2026-11-14T09:22:57+00:00",
   "sources_total": 100,
   "sources_parsed": 83,
   "search_requests": [
@@ -60,17 +60,6 @@
   ],
   "sources": [
     {
-      "source": "seed.json",
-      "trusted": true,
-      "status": "loaded",
-      "note": "40 non-API sites kept as-is, 0 dropped",
-      "api_sites_found": 0,
-      "api_candidates": 0,
-      "api_passed": 0,
-      "api_in_output": 0,
-      "fastest_ms": null
-    },
-    {
       "source": "https://raw.githubusercontent.com/once678/looktv/eb7a8709934f54c969db84f26f949e7d2fbd6029/tvbox.json",
       "trusted": false,
       "status": "parsed",
@@ -112,7 +101,7 @@
       "api_candidates": 17,
       "api_passed": 2,
       "api_in_output": 2,
-      "fastest_ms": 302
+      "fastest_ms": 195
     },
     {
       "source": "https://raw.githubusercontent.com/swirldawn/swirldawn.github.io/efe8c649f8f175a3352b9474ff6215efb7c1cc0c/tvbox.json",
@@ -123,7 +112,7 @@
       "api_candidates": 27,
       "api_passed": 5,
       "api_in_output": 5,
-      "fastest_ms": 141
+      "fastest_ms": 157
     },
     {
       "source": "https://raw.githubusercontent.com/ylxdy/IPTV/a12b085cfe580069830c7aa7e7394213d80e03d8/tvbox.json",
@@ -145,7 +134,7 @@
       "api_candidates": 1,
       "api_passed": 1,
       "api_in_output": 1,
-      "fastest_ms": 1300
+      "fastest_ms": 1353
     },
     {
       "source": "https://raw.githubusercontent.com/zys8119/react/7c18a538839e5f6b81aeebf2daa8e692290faadc/tvbox.json",
@@ -189,7 +178,7 @@
       "api_candidates": 4,
       "api_passed": 2,
       "api_in_output": 2,
-      "fastest_ms": 106
+      "fastest_ms": 291
     },
     {
       "source": "https://raw.githubusercontent.com/franksun1211/TVBOX/aac9dfb5393890d61b9566b6c09d7d710b8f1347/sun.json",
@@ -214,7 +203,7 @@
       "fastest_ms": null
     },
     {
-      "source": "https://raw.githubusercontent.com/xiongjian83/TvBox/3b438d985cef3923068243c28d12e5d9f242b46d/19.json",
+      "source": "https://raw.githubusercontent.com/xiongjian83/TvBox/efa13a6633172a9ca1a35b7ba8e03c9a0033dd80/19.json",
       "trusted": false,
       "status": "parsed",
       "note": "",
@@ -222,10 +211,10 @@
       "api_candidates": 62,
       "api_passed": 7,
       "api_in_output": 7,
-      "fastest_ms": 625
+      "fastest_ms": 410
     },
     {
-      "source": "https://raw.githubusercontent.com/xiongjian83/TvBox/3b438d985cef3923068243c28d12e5d9f242b46d/YZ.json",
+      "source": "https://raw.githubusercontent.com/xiongjian83/TvBox/efa13a6633172a9ca1a35b7ba8e03c9a0033dd80/YZ.json",
       "trusted": false,
       "status": "parsed",
       "note": "",
@@ -255,7 +244,7 @@
       "api_candidates": 13,
       "api_passed": 3,
       "api_in_output": 3,
-      "fastest_ms": 177
+      "fastest_ms": 253
     },
     {
       "source": "https://raw.githubusercontent.com/Mainstayz/box/dc3f999dd5caf6b1b917873295256c99ae5b773c/tvbox.json",
@@ -269,7 +258,7 @@
       "fastest_ms": null
     },
     {
-      "source": "https://raw.githubusercontent.com/xiongjian83/TvBox/3b438d985cef3923068243c28d12e5d9f242b46d/X.json",
+      "source": "https://raw.githubusercontent.com/xiongjian83/TvBox/efa13a6633172a9ca1a35b7ba8e03c9a0033dd80/X.json",
       "trusted": false,
       "status": "not_json_object",
       "note": "",
@@ -302,6 +291,17 @@
       "fastest_ms": null
     },
     {
+      "source": "https://raw.githubusercontent.com/zhuxinfu88/tvlist/2b8754374d62272750db7eb18c58a22a6ee3b66c/jar/0.json",
+      "trusted": false,
+      "status": "parsed",
+      "note": "",
+      "api_sites_found": 4,
+      "api_candidates": 2,
+      "api_passed": 1,
+      "api_in_output": 1,
+      "fastest_ms": 338
+    },
+    {
       "source": "https://raw.githubusercontent.com/Henrytuan/tvbox/72894eca97dbc88d0c4a9bd3eb098d1fc75a0757/tvbox.json",
       "trusted": false,
       "status": "parsed",
@@ -311,17 +311,6 @@
       "api_passed": 0,
       "api_in_output": 0,
       "fastest_ms": null
-    },
-    {
-      "source": "https://raw.githubusercontent.com/zhuxinfu88/tvlist/cea7e42b01dc89f57b894d54cbac511c5bf4e61b/jar/0.json",
-      "trusted": false,
-      "status": "parsed",
-      "note": "",
-      "api_sites_found": 4,
-      "api_candidates": 2,
-      "api_passed": 1,
-      "api_in_output": 1,
-      "fastest_ms": 179
     },
     {
       "source": "https://raw.githubusercontent.com/AlanTse1314/TVBox-18/1d88f6dc52a0de19a217d477f131cd8afd963f43/tvbox2.json",
@@ -431,7 +420,7 @@
       "api_candidates": 12,
       "api_passed": 2,
       "api_in_output": 2,
-      "fastest_ms": 264
+      "fastest_ms": 205
     },
     {
       "source": "https://raw.githubusercontent.com/tiantaiyx/tvbox/d97a57c12bc0ac189cda5acfe530394e03d80371/0706.json",
@@ -475,7 +464,7 @@
       "api_candidates": 6,
       "api_passed": 5,
       "api_in_output": 5,
-      "fastest_ms": 366
+      "fastest_ms": 348
     },
     {
       "source": "https://raw.githubusercontent.com/zyscdx/tvbox/e5f6e290f664356ba6c4132f6b5fa088dacabc5d/fhvk.json",
@@ -495,9 +484,9 @@
       "note": "",
       "api_sites_found": 8,
       "api_candidates": 5,
-      "api_passed": 2,
-      "api_in_output": 2,
-      "fastest_ms": 994
+      "api_passed": 1,
+      "api_in_output": 1,
+      "fastest_ms": 789
     },
     {
       "source": "https://raw.githubusercontent.com/franksun1211/TVBOX/aac9dfb5393890d61b9566b6c09d7d710b8f1347/0903.json",
@@ -533,7 +522,7 @@
       "fastest_ms": null
     },
     {
-      "source": "https://raw.githubusercontent.com/ne7359/tvurl/81d0ddce5731a773ff559835778cb198499e63f0/js.json",
+      "source": "https://raw.githubusercontent.com/ne7359/tvurl/faa520327e370dc3906d2e4665aadd7396c26180/js.json",
       "trusted": false,
       "status": "parsed",
       "note": "",
@@ -552,7 +541,7 @@
       "api_candidates": 6,
       "api_passed": 4,
       "api_in_output": 4,
-      "fastest_ms": 111
+      "fastest_ms": 143
     },
     {
       "source": "https://raw.githubusercontent.com/swhtv/111/86d67db59d229aea487c3bbf1cc4533836bb63a8/hua.json",
@@ -574,7 +563,7 @@
       "api_candidates": 9,
       "api_passed": 4,
       "api_in_output": 4,
-      "fastest_ms": 76
+      "fastest_ms": 216
     },
     {
       "source": "https://raw.githubusercontent.com/a736240087/tvbox/5e6ebbfc744747104f9c214a33935ee533a15ad5/2.json",
@@ -618,7 +607,7 @@
       "api_candidates": 2,
       "api_passed": 1,
       "api_in_output": 1,
-      "fastest_ms": 112
+      "fastest_ms": 390
     },
     {
       "source": "https://raw.githubusercontent.com/s14685/tv/ba297bfa6cc669ab89a55dc8c543831af1c022c4/xc.json",
@@ -676,7 +665,7 @@
       "fastest_ms": null
     },
     {
-      "source": "https://raw.githubusercontent.com/jj00780078/jj00780078.github.io/5a4fe1d3819292772c6f0930f6f7c880a3d3e177/a5.json",
+      "source": "https://raw.githubusercontent.com/jj00780078/jj00780078.github.io/eda42b732faff2de0329c51bfdb3126163c904a0/a5.json",
       "trusted": false,
       "status": "parsed",
       "note": "",
@@ -794,7 +783,7 @@
       "api_candidates": 2,
       "api_passed": 2,
       "api_in_output": 2,
-      "fastest_ms": 48
+      "fastest_ms": 290
     },
     {
       "source": "https://raw.githubusercontent.com/ellondoa/Yoursmile7-TVBox/42a9a6b6db2d01d1f8eabf40eb525cc1aa652696/XC.json",
@@ -816,7 +805,7 @@
       "api_candidates": 6,
       "api_passed": 3,
       "api_in_output": 3,
-      "fastest_ms": 153
+      "fastest_ms": 190
     },
     {
       "source": "https://raw.githubusercontent.com/Newtxin/tvbox/d07b4c987056fba4af1ce5ca7c139161c9b11972/015.json",
@@ -913,9 +902,9 @@
       "note": "",
       "api_sites_found": 21,
       "api_candidates": 12,
-      "api_passed": 4,
-      "api_in_output": 4,
-      "fastest_ms": 86
+      "api_passed": 5,
+      "api_in_output": 5,
+      "fastest_ms": 128
     },
     {
       "source": "https://raw.githubusercontent.com/jixiejishu/zytzx/ef0d8ce1a08bb4ef250feb32788b1deae012236c/ftyzx.json",
@@ -1058,7 +1047,7 @@
       "api_candidates": 2,
       "api_passed": 1,
       "api_in_output": 1,
-      "fastest_ms": 1151
+      "fastest_ms": 1118
     },
     {
       "source": "https://raw.githubusercontent.com/jane3824/TV/84d2da9193231bc34dda9c95780e4cb36c635e1b/ok.json",
@@ -1146,7 +1135,7 @@
       "api_candidates": 1,
       "api_passed": 1,
       "api_in_output": 1,
-      "fastest_ms": 170
+      "fastest_ms": 328
     },
     {
       "source": "https://raw.githubusercontent.com/xibao999/x/c836dd27a08687548b3f5ba1061a2fc9dfa4b0d7/b.json",
@@ -1172,12 +1161,5 @@
     }
   ],
   "seed_sites_dropped": [],
-  "lives": [
-    {
-      "name": "Gather「果」",
-      "url": "https://tv.tmxk.kdns.fr/yplrnuc7",
-      "reachable": false,
-      "latency_ms": null
-    }
-  ]
+  "lives": []
 }
