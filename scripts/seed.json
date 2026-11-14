@@ -363,6 +363,16 @@
       "changeable": 0
     },
     {
+      "key": "missav",
+      "name": "MISSAV",
+      "type": 3,
+      "api": "https://tvbox-final.pages.dev/frontend/api/drpy2.min.js",
+      "ext": "https://tvbox-final.pages.dev/frontend/js/missav.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+}    
+    {
       "key": "米搜",
       "name": "🌖┃米搜┃网盘",
       "type": 3,
