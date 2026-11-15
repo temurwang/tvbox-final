@@ -1,31 +1,30 @@
 {
-  "generated_at": "2026-11-14T09:28:27+00:00",
+  "generated_at": "2026-11-15T02:01:36+00:00",
   "seed_only": false,
   "seed_loaded": true,
-  "untrusted_sources_parsed": 83,
+  "untrusted_sources_parsed": 85,
   "api_candidates": 217,
-  "api_passed": 50,
-  "api_in_output": 50,
+  "api_passed": 52,
+  "api_in_output": 52,
   "seed_sites_kept": 41,
   "seed_sites_dropped": 0,
-  "total_sites_in_output": 91,
+  "total_sites_in_output": 93,
   "trust_seed": true,
   "validation_reasons": {
     "http_403": 12,
     "connection_error": 98,
-    "ok": 50,
-    "not_json": 25,
+    "ok": 52,
+    "not_json": 24,
     "http_429": 4,
     "timeout": 16,
     "http_404": 7,
-    "http_502": 1,
     "http_523": 3,
     "http_410": 1
   },
   "latency_ms": {
-    "min": 59,
-    "median": 330,
-    "max": 1166
+    "min": 112,
+    "median": 336,
+    "max": 1827
   },
   "threshold_ms": 4000
 }
