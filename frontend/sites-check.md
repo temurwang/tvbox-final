@@ -1,96 +1,95 @@
-# Site check (2026-11-16T11:47:07+00:00)
+# Site check (2026-11-16T11:54:34+00:00)
 
-可用 87 / 共检测 266（可用 = 分类列表和视频列表都能返回，且耗时不超过 4000ms；耗时取两次请求中较慢的一次）
+可用 86 / 共检测 266（可用 = 分类列表和视频列表都能返回，且耗时不超过 4000ms；耗时取两次请求中较慢的一次）
 
 | 名称 | API地址 | 可用 | 耗时(ms) | 原因 | 进入输出 |
 |---|---|---|---|---|---|
-| 🍀极速资源 | https://jszyapi.com/api.php/provide/vod | ✅ | 89 | 可用 | 是 |
-| 极速影院 | https://jszyapi.com/api.php/provide/vod/at/json | ✅ | 89 | 可用 | 是 |
-| 🍀无尽ME | https://api.wujinapi.me/api.php/provide/vod | ✅ | 109 | 可用 | 是 |
-| 🍀鲸鱼资源 | https://jyzyapi.com/provide/vod | ✅ | 117 | 可用 | 是 |
-| 鸡坤采集 | https://jkunzyapi.com/api.php/provide/vod | ✅ | 120 | 可用 | 是 |
-| 黄色仓库 | https://hsckzy.vip/api.php/provide/vod | ✅ | 126 | 可用 | 是 |
-| 🍀虎牙资源 | https://www.huyaapi.com/api.php/provide/vod | ✅ | 128 | 可用 | 是 |
-| ⚡光速资源 | 极速切片 | https://api.guangsuapi.com/api.php/provide/vod/json | ✅ | 171 | 可用 | 是 |
-| 滴滴采集 | https://api.ddapi.cc/api.php/provide/vod | ✅ | 175 | 可用 | 是 |
-| 🚀玉兔 | https://apiyutu.com/api.php/provide/vod/at/json | ✅ | 178 | 可用 | 是 |
-| 🚀玉兔 | https://apiyutu.com/api.php/provide/vod | ✅ | 178 | 可用 | 是 |
-| 雷蒙影视 | 🚀光速 | https://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8 | ✅ | 184 | 可用 | 是 |
-| CK | https://www.ckzy1.com/api.php/provide/vod | ✅ | 184 | 可用 | 是 |
-| 豆豆 | https://api.douapi.cc/api.php/provide/vod | ✅ | 188 | 可用 | 是 |
-| 🐝光速资源 | https://api.guangsuapi.com/api.php/provide/vod | ✅ | 191 | 可用 | 是 |
-| souAV | https://api.souavzyw.net/api.php/provide/vod | ✅ | 193 | 可用 | 是 |
-| 🐝U酷 资源 | https://api.ukuapi.com/api.php/provide/vod | ✅ | 202 | 可用 | 是 |
+| 索尼(采集) | https://suoniapi.com/api.php/provide/vod/at/json | ✅ | 48 | 可用 | 是 |
+| 🍀U酷资源88 | https://api.ukuapi88.com/api.php/provide/vod | ✅ | 61 | 可用 | 是 |
+| 🍀无尽ME | https://api.wujinapi.me/api.php/provide/vod | ✅ | 71 | 可用 | 是 |
+| 🍀最大资源 | https://api.zuidapi.com/api.php/provide/vod | ✅ | 77 | 可用 | 是 |
+| 🚀155 | https://155api.com/api.php/provide/vod | ✅ | 77 | 可用 | 是 |
+| 索尼┃资源 | https://suoniapi.com/api.php/provide/vod/from/snm3u8 | ✅ | 81 | 可用 | 是 |
+| 鸡坤采集 | https://jkunzyapi.com/api.php/provide/vod | ✅ | 87 | 可用 | 是 |
+| 🍀虎牙资源 | https://www.huyaapi.com/api.php/provide/vod | ✅ | 94 | 可用 | 是 |
+| 索尼┃采集 | https://suoniapi.com/api.php/provide/vod | ✅ | 107 | 可用 | 是 |
+| 小鸡窝 | https://api.xiaojizy.live/provide/vod | ✅ | 108 | 可用 | 是 |
+| 大众影视 | https://cdn.dzzyapi.com/api.php/provide/vod | ✅ | 121 | 可用 | 是 |
+| 🐝光速资源 | https://api.guangsuapi.com/api.php/provide/vod | ✅ | 122 | 可用 | 是 |
+| ❤ikun资源 | https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/at/json | ✅ | 129 | 可用 | 是 |
+| 雷蒙影视 | 🚀光速 | https://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8 | ✅ | 132 | 可用 | 是 |
+| 🚀玉兔 | https://apiyutu.com/api.php/provide/vod | ✅ | 133 | 可用 | 是 |
+| CK | https://www.ckzy1.com/api.php/provide/vod | ✅ | 137 | 可用 | 是 |
+| 🍀iKun资源 | https://ikunzyapi.com/api.php/provide/vod | ✅ | 140 | 可用 | 是 |
+| 🏎️快车资源 | 经典老剧/港台 | https://caiji.kuaichezy.org/api.php/provide/vod | ✅ | 145 | 可用 | 是 |
+| ⚡光速资源 | 极速切片 | https://api.guangsuapi.com/api.php/provide/vod/json | ✅ | 152 | 可用 | 是 |
+| 🍀鲸鱼资源 | https://jyzyapi.com/provide/vod | ✅ | 154 | 可用 | 是 |
+| 🍀牛牛点播 | https://api.niuniuzy.me/api.php/provide/vod | ✅ | 154 | 可用 | 是 |
+| 🐝红牛资源 | https://www.hongniuzy2.com/api.php/provide/vod | ✅ | 158 | 可用 | 是 |
+| 🍀魔都资源 | https://www.mdzyapi.com/api.php/provide/vod | ✅ | 162 | 可用 | 是 |
+| 🍀极速资源 | https://jszyapi.com/api.php/provide/vod | ✅ | 166 | 可用 | 是 |
+| 🍀丫丫点播 | https://cj.yayazy.net/api.php/provide/vod | ✅ | 170 | 可用 | 是 |
+| 🍀红牛资源3 | https://www.hongniuzy3.com/api.php/provide/vod | ✅ | 172 | 可用 | 是 |
+| souAV | https://api.souavzyw.net/api.php/provide/vod | ✅ | 172 | 可用 | 是 |
+| CK资源 | https://ckzy.me/api.php/provide/vod | ✅ | 175 | 可用 | 是 |
+| 🍀无尽NET | https://api.wujinapi.net/api.php/provide/vod | ✅ | 181 | 可用 | 是 |
+| 🍀閃電资源 | https://sdzyapi.com/api.php/provide/vod | ✅ | 188 | 可用 | 是 |
+| 🍀金鹰点播 | https://jinyingzy.com/api.php/provide/vod | ✅ | 191 | 可用 | 是 |
+| 🍀索尼-闪电 | https://xsd.sdzyapi.com/api.php/provide/vod | ✅ | 193 | 可用 | 是 |
+| 🍀天涯海角 | https://tyyszyapi.com/api.php/provide/vod | ✅ | 199 | 可用 | 是 |
+| 🐝U酷 资源 | https://api.ukuapi.com/api.php/provide/vod | ✅ | 200 | 可用 | 是 |
+| 🐝无尽资源 | https://api.wujinapi.com/api.php/provide/vod | ✅ | 202 | 可用 | 是 |
+| ⚽红牛体育 | 足球/NBA/录像 | https://www.hongniuzy2.com/api.php/provide/vod/at/josn | ✅ | 202 | 可用 | 是 |
+| 🍀无尽CC | https://api.wujinapi.cc/api.php/provide/vod | ✅ | 207 | 可用 | 是 |
 | 🍀天涯资源 | https://tyyszy.com/api.php/provide/vod | ✅ | 218 | 可用 | 是 |
-| 🍀天涯海角 | https://tyyszyapi.com/api.php/provide/vod | ✅ | 233 | 可用 | 是 |
-| 小鸡窝 | https://api.xiaojizy.live/provide/vod | ✅ | 239 | 可用 | 是 |
-| CK资源 | https://ckzy.me/api.php/provide/vod | ✅ | 255 | 可用 | 是 |
-| 大众影视 | https://cdn.dzzyapi.com/api.php/provide/vod | ✅ | 266 | 可用 | 是 |
-| 🍀海豚资源 | https://hhzyapi.com/api.php/provide/vod | ✅ | 277 | 可用 | 是 |
-| 🚀森林1 | https://slapibf.com/api.php/provide/vod | ✅ | 281 | 可用 | 是 |
-| 🍀閃電资源 | https://sdzyapi.com/api.php/provide/vod | ✅ | 297 | 可用 | 是 |
-| 🏎️快车资源 | 经典老剧/港台 | https://caiji.kuaichezy.org/api.php/provide/vod | ✅ | 301 | 可用 | 是 |
-| ⚽红牛体育 | 足球/NBA/录像 | https://www.hongniuzy2.com/api.php/provide/vod/at/josn | ✅ | 302 | 可用 | 是 |
-| 🍀索尼-闪电 | https://xsd.sdzyapi.com/api.php/provide/vod | ✅ | 304 | 可用 | 是 |
-| 🍀丫丫点播 | https://cj.yayazy.net/api.php/provide/vod | ✅ | 306 | 可用 | 是 |
-| 🍀红牛资源3 | https://www.hongniuzy3.com/api.php/provide/vod | ✅ | 306 | 可用 | 是 |
-| 🐝红牛资源 | https://www.hongniuzy2.com/api.php/provide/vod | ✅ | 309 | 可用 | 是 |
-| 🚀深林 | https://slapibf.com/api.php/provide/vod/at/json | ✅ | 318 | 可用 | 是 |
-| 🍀无尽NET | https://api.wujinapi.net/api.php/provide/vod | ✅ | 321 | 可用 | 是 |
-| 🍀最大资源 | https://api.zuidapi.com/api.php/provide/vod | ✅ | 328 | 可用 | 是 |
-| 🚀155 | https://155api.com/api.php/provide/vod | ✅ | 329 | 可用 | 是 |
-| 🐝无尽资源 | https://api.wujinapi.com/api.php/provide/vod | ✅ | 332 | 可用 | 是 |
-| 🍀牛牛点播 | https://api.niuniuzy.me/api.php/provide/vod | ✅ | 334 | 可用 | 是 |
-| 🍀U酷资源88 | https://api.ukuapi88.com/api.php/provide/vod | ✅ | 335 | 可用 | 是 |
-| ❤ikun资源 | https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/at/json | ✅ | 342 | 可用 | 是 |
-| 91麻豆 | https://91md.me/api.php/provide/vod | ✅ | 343 | 可用 | 是 |
-| 索尼(采集) | https://suoniapi.com/api.php/provide/vod/at/json | ✅ | 347 | 可用 | 是 |
-| 百度┃采集 | https://api.apibdzy.com/api.php/provide/vod | ✅ | 352 | 可用 | 是 |
-| 🍀iKun资源 | https://ikunzyapi.com/api.php/provide/vod | ✅ | 354 | 可用 | 是 |
-| 索尼┃采集 | https://suoniapi.com/api.php/provide/vod | ✅ | 367 | 可用 | 是 |
-| 91md | https://91md.me/api.php/provide/vod/from/mdm3u8 | ✅ | 383 | 可用 | 是 |
-| 大奶子 | https://apidanaizi.com/api.php/provide/vod | ✅ | 387 | 可用 | 是 |
-| 91md91麻豆 | https://91md.me/api.php/provide/vod/at/json | ✅ | 392 | 可用 | 是 |
-| 🚀奶香 | https://naixxzy.com/api.php/provide/vod/at/json | ✅ | 398 | 可用 | 是 |
-| 电影天堂 | https://caiji.dyttzyapi.com/api.php/provide/vod | ✅ | 427 | 可用 | 是 |
-| 🍀魔都动漫 | https://caiji.moduapi.cc/api.php/provide/vod | ✅ | 442 | 可用 | 是 |
-| 索尼┃资源 | https://suoniapi.com/api.php/provide/vod/from/snm3u8 | ✅ | 444 | 可用 | 是 |
-| 🍀无尽CC | https://api.wujinapi.cc/api.php/provide/vod | ✅ | 451 | 可用 | 是 |
-| 1080影院 | https://api.yzzy-api.com/inc/apijson.php | ✅ | 482 | 可用 | 是 |
-| 🍀新浪HTTPS | https://api.xinlangapi.com/xinlangapi.php/provide/vod | ✅ | 489 | 可用 | 是 |
-| 🍀1080JSON | https://api.1080zyku.com/inc/apijson.php | ✅ | 506 | 可用 | 是 |
-| ❤优质资源 | https://api.1080zyku.com/inc/api_mac10.php | ✅ | 511 | 可用 | 是 |
-| 🍀魔都资源 | https://www.mdzyapi.com/api.php/provide/vod | ✅ | 523 | 可用 | 是 |
-| 麻豆cc | https://md91.cc/api.php/provide/vod | ✅ | 587 | 可用 | 是 |
-| 🍀金鹰点播 | https://jinyingzy.com/api.php/provide/vod | ✅ | 652 | 可用 | 是 |
-| ❤淘片资源 | https://taopianapi.com/cjapi/mc/vod/json.html | ✅ | 684 | 可用 | 是 |
-| 🍀速博资源 | https://subocaiji.com/api.php/provide/vod | ✅ | 689 | 可用 | 是 |
-| 精品 | https://www.jingpinx.com/api.php/provide/vod | ✅ | 692 | 可用 | 是 |
-| 非凡(采集) | https://cj.ffzyapi.com/api.php/provide/vod/at/json | ✅ | 725 | 可用 | 是 |
-| 黑料 | https://heiliaozyapi.com/api.php/provide/vod | ✅ | 764 | 可用 | 是 |
-| 番茄 | https://fqzy.me/api.php/provide/vod | ✅ | 774 | 可用 | 是 |
-| 乐播资源 | https://lbapi9.com/api.php/provide/vod | ✅ | 802 | 可用 | 是 |
-| 🍀暴风APP | https://app.bfzyapi.com/api.php/provide/vod | ✅ | 894 | 可用 | 是 |
-| 🍀茅台资源 | https://caiji.maotaizy.cc/api.php/provide/vod | ✅ | 919 | 可用 | 是 |
-| apilj辣椒资源 | https://apilj.com/api.php/provide/vod/at/json | ✅ | 934 | 可用 | 是 |
-| 暴風┃采集 | https://bfzyapi.com/api.php/provide/vod | ✅ | 952 | 可用 | 是 |
-| 猫眼资源 | https://api.maoyanapi.top/api.php/provide/vod | ✅ | 1044 | 可用 | 是 |
-| dadiapi大地 | https://dadiapi.com/api.php/provide/vod | ✅ | 1052 | 可用 | 是 |
-| 鲨鱼资源 | https://shayuapi.com/api.php/provide/vod | ✅ | 1075 | 可用 | 是 |
-| 天涯影院 | https://ty.tyyszy5.com/api.php/provide/vod | ✅ | 1085 | 可用 | 是 |
-| 西瓜资源 | https://xiguazy.tv/api.php/provide/vod | ✅ | 1117 | 可用 | 是 |
-| 奥斯卡 | https://aosikazy.com/api.php/provide/vod | ✅ | 1118 | 可用 | 是 |
-| 速优 | https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8 | ✅ | 1134 | 可用 | 是 |
-| 量子(采集) | https://cj.lziapi.com/api.php/provide/vod/at/json | ✅ | 1326 | 可用 | 是 |
-| 360资源 | https://360zy.com/api.php/provide/vod/at/json | ✅ | 1531 | 可用 | 是 |
-| 🍀360资源 | https://360zy.com/api.php/provide/vod | ✅ | 1559 | 可用 | 是 |
-| lovedan艾旦 | https://lovedan.net/api.php/provide/vod | ✅ | 1569 | 可用 | 是 |
-| 量子┃采集 | https://cj.lziapi.com/api.php/provide/vod | ✅ | 1640 | 可用 | 是 |
-| 💕短剧💕 | https://cj.lzcaiji.com/api.php/provide/vod/from/liangzi | ✅ | 1652 | 可用 | 是 |
-| 🍀非凡API | https://api.ffzyapi.com/api.php/provide/vod | ✅ | 1721 | 可用 | 是 |
-| 🍀魔都影视 | https://www.moduzy.com/api.php/provide/vod | ✅ | 2046 | 可用 | 是 |
-| 🍀非凡采集HTTPS | https://cj.ffzyapi.com/api.php/provide/vod | ✅ | 2212 | 可用 | 是 |
-| 🍀如意资源 | https://cj.rycjapi.com/api.php/provide/vod | ✅ | 2236 | 可用 | 是 |
+| 百度┃采集 | https://api.apibdzy.com/api.php/provide/vod | ✅ | 224 | 可用 | 是 |
+| 91md91麻豆 | https://91md.me/api.php/provide/vod/at/json | ✅ | 266 | 可用 | 是 |
+| 麻豆cc | https://md91.cc/api.php/provide/vod | ✅ | 270 | 可用 | 是 |
+| 🍀海豚资源 | https://hhzyapi.com/api.php/provide/vod | ✅ | 272 | 可用 | 是 |
+| 🚀森林1 | https://slapibf.com/api.php/provide/vod | ✅ | 274 | 可用 | 是 |
+| 🚀深林 | https://slapibf.com/api.php/provide/vod/at/json | ✅ | 283 | 可用 | 是 |
+| 91md | https://91md.me/api.php/provide/vod/from/mdm3u8 | ✅ | 288 | 可用 | 是 |
+| 滴滴采集 | https://api.ddapi.cc/api.php/provide/vod | ✅ | 293 | 可用 | 是 |
+| ❤优质资源 | https://api.1080zyku.com/inc/api_mac10.php | ✅ | 303 | 可用 | 是 |
+| 91麻豆 | https://91md.me/api.php/provide/vod | ✅ | 305 | 可用 | 是 |
+| ❤淘片资源 | https://taopianapi.com/cjapi/mc/vod/json.html | ✅ | 307 | 可用 | 是 |
+| 豆豆 | https://api.douapi.cc/api.php/provide/vod | ✅ | 328 | 可用 | 是 |
+| 🍀魔都动漫 | https://caiji.moduapi.cc/api.php/provide/vod | ✅ | 334 | 可用 | 是 |
+| 极速影院 | https://jszyapi.com/api.php/provide/vod/at/json | ✅ | 351 | 可用 | 是 |
+| 大奶子 | https://apidanaizi.com/api.php/provide/vod | ✅ | 358 | 可用 | 是 |
+| 电影天堂 | https://caiji.dyttzyapi.com/api.php/provide/vod | ✅ | 373 | 可用 | 是 |
+| 🍀速博资源 | https://subocaiji.com/api.php/provide/vod | ✅ | 431 | 可用 | 是 |
+| 1080影院 | https://api.yzzy-api.com/inc/apijson.php | ✅ | 493 | 可用 | 是 |
+| 🍀新浪HTTPS | https://api.xinlangapi.com/xinlangapi.php/provide/vod | ✅ | 512 | 可用 | 是 |
+| 🍀非凡API | https://api.ffzyapi.com/api.php/provide/vod | ✅ | 542 | 可用 | 是 |
+| 🚀奶香 | https://naixxzy.com/api.php/provide/vod/at/json | ✅ | 557 | 可用 | 是 |
+| 🍀1080JSON | https://api.1080zyku.com/inc/apijson.php | ✅ | 569 | 可用 | 是 |
+| 🍀暴风APP | https://app.bfzyapi.com/api.php/provide/vod | ✅ | 632 | 可用 | 是 |
+| 暴風┃采集 | https://bfzyapi.com/api.php/provide/vod | ✅ | 647 | 可用 | 是 |
+| 奥斯卡 | https://aosikazy.com/api.php/provide/vod | ✅ | 663 | 可用 | 是 |
+| 🍀非凡采集HTTPS | https://cj.ffzyapi.com/api.php/provide/vod | ✅ | 691 | 可用 | 是 |
+| 非凡(采集) | https://cj.ffzyapi.com/api.php/provide/vod/at/json | ✅ | 744 | 可用 | 是 |
+| apilj辣椒资源 | https://apilj.com/api.php/provide/vod/at/json | ✅ | 747 | 可用 | 是 |
+| 乐播资源 | https://lbapi9.com/api.php/provide/vod | ✅ | 770 | 可用 | 是 |
+| 鲨鱼资源 | https://shayuapi.com/api.php/provide/vod | ✅ | 826 | 可用 | 是 |
+| dadiapi大地 | https://dadiapi.com/api.php/provide/vod | ✅ | 847 | 可用 | 是 |
+| 360资源 | https://360zy.com/api.php/provide/vod/at/json | ✅ | 872 | 可用 | 是 |
+| 速优 | https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8 | ✅ | 885 | 可用 | 是 |
+| 黑料 | https://heiliaozyapi.com/api.php/provide/vod | ✅ | 910 | 可用 | 是 |
+| 天涯影院 | https://ty.tyyszy5.com/api.php/provide/vod | ✅ | 936 | 可用 | 是 |
+| 精品 | https://www.jingpinx.com/api.php/provide/vod | ✅ | 1066 | 可用 | 是 |
+| 番茄 | https://fqzy.me/api.php/provide/vod | ✅ | 1068 | 可用 | 是 |
+| 💕短剧💕 | https://cj.lzcaiji.com/api.php/provide/vod/from/liangzi | ✅ | 1076 | 可用 | 是 |
+| 西瓜资源 | https://xiguazy.tv/api.php/provide/vod | ✅ | 1112 | 可用 | 是 |
+| 量子(采集) | https://cj.lziapi.com/api.php/provide/vod/at/json | ✅ | 1140 | 可用 | 是 |
+| 黄色仓库 | https://hsckzy.vip/api.php/provide/vod | ✅ | 1202 | 可用 | 是 |
+| 🍀360资源 | https://360zy.com/api.php/provide/vod | ✅ | 1283 | 可用 | 是 |
+| 🍀如意资源 | https://cj.rycjapi.com/api.php/provide/vod | ✅ | 1342 | 可用 | 是 |
+| 量子┃采集 | https://cj.lziapi.com/api.php/provide/vod | ✅ | 1404 | 可用 | 是 |
+| 🍀茅台资源 | https://caiji.maotaizy.cc/api.php/provide/vod | ✅ | 1572 | 可用 | 是 |
+| 🍀魔都影视 | https://www.moduzy.com/api.php/provide/vod | ✅ | 1721 | 可用 | 是 |
+| 猫眼资源 | https://api.maoyanapi.top/api.php/provide/vod | ✅ | 1786 | 可用 | 是 |
+| 🚀玉兔 | https://apiyutu.com/api.php/provide/vod/at/json | ✅ | 3404 | 可用 | 是 |
 | 考拉直链(优) | https://ikaola.tv/api.php/provide/vod | ❌ | - | HTTP错误 403 | 否 |
 | 海外看┃采集 | https://haiwaikan.com/api.php/provide/vod | ❌ | - | 连接失败 | 否 |
 | 快帆┃采集 | https://api.kuaifan.tv/api.php/provide/vod | ❌ | - | 连接失败 | 否 |
@@ -134,7 +133,7 @@
 | 🐝樱花资源 | https://yhzy.cc/api.php/provide/vod | ❌ | - | HTTP错误 403 | 否 |
 | 🐝卧龙资源 | https://collect.wolongzyw.com/api.php/provide/vod | ❌ | - | 返回的不是JSON | 否 |
 | 🐝Fox 资源 | https://foxzy.net/api.php/provide/vod | ❌ | - | 连接失败 | 否 |
-| 🐝Fox 采集 | https://api.foxzyapi.com/api.php/provide/vod | ❌ | - | HTTP错误 429 | 否 |
+| 🐝Fox 采集 | https://api.foxzyapi.com/api.php/provide/vod | ❌ | - | 返回的不是JSON | 否 |
 | 🐝3 9影视 | https://www.39kan.com/api.php/provide/vod | ❌ | - | HTTP错误 403 | 否 |
 | 🐝酷点资源 | https://api.kuapi.cc/api.php/provide/vod | ❌ | - | 连接失败 | 否 |
 | 🐝想看资源 | https://xiangkanzy.com/api.php/provide/vod | ❌ | - | 超时 | 否 |
@@ -155,6 +154,7 @@
 | kkzyKK写真资源 | https://kkzy.me/api.php/provide/vod/at/json | ❌ | - | HTTP错误 429 | 否 |
 | kudian70酷伦理 | https://api.kudian70.com/api.php/provide/vod/at/json | ❌ | - | 连接失败 | 否 |
 | kudouzy酷豆资源(切) | https://kudouzy.com/api.php/provide/vod/at/json | ❌ | - | 连接失败 | 否 |
+| lovedan艾旦 | https://lovedan.net/api.php/provide/vod | ❌ | - | 超时 | 否 |
 | mgzyz1芒果资源 | https://mgzyz1.com/api.php/provide/vod/at/json | ❌ | - | 返回的不是JSON | 否 |
 | putaozy葡萄 | https://caiji.putaozy.net/inc/apijson_vod.php | ❌ | - | 连接失败 | 否 |
 | sewozyapi色窝 | https://sewozyapi.com/api.php/provide/vod | ❌ | - | 连接失败 | 否 |
