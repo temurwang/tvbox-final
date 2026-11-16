@@ -58,7 +58,6 @@ jobs:
           MAX_SITES: ${{ inputs.max_sites || '150' }}
           # seed 里「儿童」站点用的是 ./api/drpy2.min.js、./js/兔小贝.js 这类相对路径，
           # 需要指向这些文件实际所在的目录；没有这些文件就会 404，可把这行删掉（该站点会被丢弃）
-          SEED_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/
           OUT_DIR: frontend
         run: python scripts/aggregate.py
 
