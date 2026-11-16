@@ -47,7 +47,7 @@ export async function onRequest(context) {
     }
 
     const url = new URL(request.url);
-    const inputPassword = url.searchParams.get("password");
+    const inputPassword = url.searchParams.get("k");
 
     const authToken = await getAuthToken(env);
 
