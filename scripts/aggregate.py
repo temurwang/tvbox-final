@@ -163,9 +163,6 @@ def search_sources():
             if len(items) < 100:
                 break
             time.sleep(7)  # code search is limited to ~10 requests/minute
-        if stop:
-            print("  still rate limited, skipping remaining search queries")
-            break
     return urls[:MAX_SOURCES]
 
 
