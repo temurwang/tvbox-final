@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T10:21:12+00:00",
+  "generated_at": "2026-11-16T11:35:22+00:00",
   "sources_total": 100,
   "sources_parsed": 86,
   "search_requests": [
@@ -123,7 +123,7 @@
       "api_candidates": 6,
       "api_passed": 4,
       "api_in_output": 4,
-      "fastest_ms": 191
+      "fastest_ms": 183
     },
     {
       "source": "https://raw.githubusercontent.com/gaotianliuyun/gao/8213bb046f4dce746b5f2ddcddb13a336d0b0d60/XYQ.json",
@@ -167,7 +167,7 @@
       "api_candidates": 28,
       "api_passed": 4,
       "api_in_output": 4,
-      "fastest_ms": 295
+      "fastest_ms": 147
     },
     {
       "source": "https://raw.githubusercontent.com/cspoh123/tvbox/cbab4e0ed2ed85254c3010e277f8addaf9dc35ba/tvbox.json",
@@ -211,7 +211,7 @@
       "api_candidates": 26,
       "api_passed": 4,
       "api_in_output": 4,
-      "fastest_ms": 128
+      "fastest_ms": 87
     },
     {
       "source": "https://raw.githubusercontent.com/ylxdy/IPTV/a12b085cfe580069830c7aa7e7394213d80e03d8/tvbox.json",
@@ -310,7 +310,7 @@
       "api_candidates": 52,
       "api_passed": 5,
       "api_in_output": 5,
-      "fastest_ms": 280
+      "fastest_ms": 319
     },
     {
       "source": "https://raw.githubusercontent.com/xiongjian83/TvBox/a09f1306102b577bf4f9b620abe822b3838b7f2a/YZ.json",
@@ -357,17 +357,6 @@
       "fastest_ms": null
     },
     {
-      "source": "https://raw.githubusercontent.com/cluntop/tvbox/6968e6fff956e217a2d9c5ae6efa567cf9aa3934/jsm.json",
-      "trusted": false,
-      "status": "parsed",
-      "note": "",
-      "api_sites_found": 6,
-      "api_candidates": 1,
-      "api_passed": 1,
-      "api_in_output": 1,
-      "fastest_ms": 425
-    },
-    {
       "source": "https://raw.githubusercontent.com/shichuanenhui/TvBox/244c9d86055f93ad73cd8590030932f0c5f79e0e/fty.json",
       "trusted": false,
       "status": "parsed",
@@ -387,7 +376,7 @@
       "api_candidates": 38,
       "api_passed": 30,
       "api_in_output": 30,
-      "fastest_ms": 94
+      "fastest_ms": 68
     },
     {
       "source": "https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json",
@@ -398,7 +387,7 @@
       "api_candidates": 7,
       "api_passed": 7,
       "api_in_output": 7,
-      "fastest_ms": 151
+      "fastest_ms": 110
     },
     {
       "source": "https://raw.githubusercontent.com/alantang1977/pg/13667cbec4903e1444c6aa05ec4af2d6de779d82/all.json",
@@ -431,7 +420,7 @@
       "api_candidates": 14,
       "api_passed": 6,
       "api_in_output": 6,
-      "fastest_ms": 170
+      "fastest_ms": 237
     },
     {
       "source": "https://raw.githubusercontent.com/swhtv/111/86d67db59d229aea487c3bbf1cc4533836bb63a8/hua2.json",
@@ -519,7 +508,7 @@
       "api_candidates": 11,
       "api_passed": 1,
       "api_in_output": 1,
-      "fastest_ms": 1020
+      "fastest_ms": 2520
     },
     {
       "source": "https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json",
@@ -530,7 +519,7 @@
       "api_candidates": 15,
       "api_passed": 13,
       "api_in_output": 13,
-      "fastest_ms": 143
+      "fastest_ms": 132
     },
     {
       "source": "https://raw.githubusercontent.com/tiantaiyx/tvbox/d97a57c12bc0ac189cda5acfe530394e03d80371/0706.json",
@@ -585,7 +574,7 @@
       "api_candidates": 4,
       "api_passed": 4,
       "api_in_output": 4,
-      "fastest_ms": 113
+      "fastest_ms": 107
     },
     {
       "source": "https://raw.githubusercontent.com/1771245847/TvBox/e603cf6938131963cb906e0ee34b78550a5a9edf/cyys.json",
@@ -594,9 +583,9 @@
       "note": "",
       "api_sites_found": 8,
       "api_candidates": 5,
-      "api_passed": 2,
-      "api_in_output": 2,
-      "fastest_ms": 927
+      "api_passed": 1,
+      "api_in_output": 1,
+      "fastest_ms": 1072
     },
     {
       "source": "https://raw.githubusercontent.com/franksun1211/TVBOX/8c617b6324645fd33e6bb70cc007b4a45fe29822/0903.json",
@@ -684,7 +673,7 @@
       "api_candidates": 7,
       "api_passed": 2,
       "api_in_output": 2,
-      "fastest_ms": 786
+      "fastest_ms": 709
     },
     {
       "source": "https://raw.githubusercontent.com/lmlmi/xxxx/453b2de69db1bc9a2221a9662766d7461b4f7c08/888.json",
@@ -736,10 +725,10 @@
       "status": "parsed",
       "note": "",
       "api_sites_found": 8,
-      "api_candidates": 1,
-      "api_passed": 0,
-      "api_in_output": 0,
-      "fastest_ms": null
+      "api_candidates": 2,
+      "api_passed": 1,
+      "api_in_output": 1,
+      "fastest_ms": 289
     },
     {
       "source": "https://raw.githubusercontent.com/lubin776/tvbox/27ec79a0c39beaaf23dc8d668213e6a26dfe891f/gx/0.json",
@@ -882,7 +871,7 @@
       "api_candidates": 2,
       "api_passed": 1,
       "api_in_output": 1,
-      "fastest_ms": 373
+      "fastest_ms": 214
     },
     {
       "source": "https://raw.githubusercontent.com/ellondoa/Yoursmile7-TVBox/42a9a6b6db2d01d1f8eabf40eb525cc1aa652696/XC.json",
@@ -1014,7 +1003,7 @@
       "api_candidates": 10,
       "api_passed": 3,
       "api_in_output": 3,
-      "fastest_ms": 79
+      "fastest_ms": 59
     },
     {
       "source": "https://raw.githubusercontent.com/ncnc8388/ncnc8388.github.io/287820ea92cb6c65fd18cd6df5a9a5fa5e11ac8e/alist.json",
@@ -1135,7 +1124,7 @@
       "api_candidates": 2,
       "api_passed": 1,
       "api_in_output": 1,
-      "fastest_ms": 1012
+      "fastest_ms": 1125
     },
     {
       "source": "https://raw.githubusercontent.com/lmlmi/xxxx/453b2de69db1bc9a2221a9662766d7461b4f7c08/vip.json",
@@ -1161,6 +1150,17 @@
     },
     {
       "source": "https://raw.githubusercontent.com/cc202110/33/248621fb9c5b2e4de5d976b86c5190e6c18acf81/db.json",
+      "trusted": false,
+      "status": "parsed",
+      "note": "",
+      "api_sites_found": 0,
+      "api_candidates": 0,
+      "api_passed": 0,
+      "api_in_output": 0,
+      "fastest_ms": null
+    },
+    {
+      "source": "https://raw.githubusercontent.com/smallmi18/smallmi/c764bdde2ae6e32e5a61f85b2ed6e56abbfadd67/js.json",
       "trusted": false,
       "status": "parsed",
       "note": "",
