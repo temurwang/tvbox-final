@@ -1,22 +1,25 @@
 
 /**
- * Cloudflare Pages 全站密码保护 Middleware
+ * Cloudflare Pages 全站密码保护
  *
  * 访问方式：
- * https://xxx.pages.dev/?k=123456
+ * https://xxx.pages.dev/frontend/subscribe.json?k=1234567890
  *
- * 环境变量（Cloudflare Dashboard 设置）：
- *
+ * 环境变量：
  * PASSWORD    : 网站访问密码
- * AUTH_SECRET : Cookie 签名密钥（建议 32 字节以上随机密钥）
+ * AUTH_SECRET : Cookie 签名密钥
  *
- * Cookie 有效期：7 天
+ * 特点：
+ * 1. 不再使用 302 重定向
+ * 2. URL 参数 k 正确时直接返回请求内容
+ * 3. 浏览器可以使用 Cookie 授权
+ * 4. 兼容不支持 Cookie 的订阅客户端
  */
 
+// 生成 HMAC-SHA256 授权 Token
 async function getAuthToken(env) {
     const encoder = new TextEncoder();
 
-    // 使用 HMAC-SHA256 生成授权 Token
     const key = await crypto.subtle.importKey(
         "raw",
         encoder.encode(env.AUTH_SECRET),
@@ -34,7 +37,6 @@ async function getAuthToken(env) {
         encoder.encode("pages-auth:" + env.PASSWORD)
     );
 
-    // 转换为十六进制字符串
     return Array.from(new Uint8Array(signature))
         .map(b => b.toString(16).padStart(2, "0"))
         .join("");
@@ -44,10 +46,7 @@ export async function onRequest(context) {
 
     const { request, env, next } = context;
 
-    // ==========================================
     // 1. 检查环境变量
-    // ==========================================
-
     if (!env.PASSWORD || !env.AUTH_SECRET) {
         return new Response("Server configuration error", {
             status: 500
@@ -56,94 +55,65 @@ export async function onRequest(context) {
 
     const url = new URL(request.url);
 
-    // ==========================================
-    // 2. 生成授权 Token
-    // ==========================================
-
-    const authToken = await getAuthToken(env);
-
-    // ==========================================
-    // 3. 获取 URL 中的密码参数 k
-    // ==========================================
-
+    // 2. 获取 URL 密码参数
     const inputPassword = url.searchParams.get("k");
 
+    // 3. URL 携带密码时，直接验证
     if (inputPassword !== null) {
 
         // 密码错误
         if (inputPassword !== env.PASSWORD) {
-            return new Response(
-                "403 Forbidden - Wrong Password",
-                {
-                    status: 403,
-                    headers: {
-                        "Content-Type": "text/plain; charset=UTF-8",
-                        "Cache-Control": "no-store"
-                    }
+            return new Response("403 Forbidden - Wrong Password", {
+                status: 403,
+                headers: {
+                    "Content-Type": "text/plain; charset=UTF-8",
+                    "Cache-Control": "no-store"
                 }
-            );
+            });
         }
 
-        // ======================================
-        // 4. 密码正确，设置授权 Cookie
-        // ======================================
+        // 密码正确，直接执行后续请求
+        // 不重定向，不删除 k 参数
+        const response = await next();
 
-        const headers = new Headers();
+        // 同时设置 Cookie，方便浏览器后续访问
+        const authToken = await getAuthToken(env);
 
-        headers.append(
-            "Set-Cookie",
-            `pages_auth=${authToken}; Path=/; Max-Age=604800; HttpOnly; Secure; SameSite=Strict`
+        const newResponse = new Response(
+            response.body,
+            response
         );
 
-        // 删除 k 参数，避免密码留在地址栏
-        // 保留 URL 中的其他查询参数
-        url.searchParams.delete("k");
+        newResponse.headers.append(
+            "Set-Cookie",
+            `pages_auth=${authToken}; Path=/; Max-Age=604800; HttpOnly; Secure; SameSite=Lax`
+        );
 
-        // 跳转到清理后的 URL
-        headers.set("Location", url.toString());
-
-        return new Response(null, {
-            status: 302,
-            headers
-        });
+        return newResponse;
     }
 
-    // ==========================================
-    // 5. 检查 Cookie 授权
-    // ==========================================
-
+    // 4. 没有 URL 密码时，检查 Cookie
     const cookie = request.headers.get("Cookie") || "";
 
     const match = cookie.match(
         /(?:^|;\s*)pages_auth=([a-f0-9]+)/
     );
 
-    // Cookie 正确，允许访问
-    if (match && match[1] === authToken) {
-        return next();
+    if (match) {
+        const authToken = await getAuthToken(env);
+
+        if (match[1] === authToken) {
+            return next();
+        }
     }
 
-    // ==========================================
-    // 6. 未授权，禁止访问
-    // ==========================================
-
+    // 5. 未授权，禁止访问
     return new Response(
-        `<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>403 Forbidden</title>
-</head>
-<body>
-    <h2>访问被拒绝</h2>
-    <p>请使用正确的密码访问网站。</p>
-</body>
-</html>`,
+        "403 Forbidden - Access Denied",
         {
             status: 403,
             headers: {
-                "Content-Type": "text/html; charset=UTF-8",
+                "Content-Type": "text/plain; charset=UTF-8",
                 "Cache-Control": "no-store"
             }
         }
