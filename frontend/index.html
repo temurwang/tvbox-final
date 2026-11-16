@@ -106,6 +106,7 @@
   <h2>聚合订阅链接</h2>
   <ul class="links" id="links"></ul>
   <p class="note">聚合完成后，Cloudflare 还需要约 1 到 2 分钟发布新文件，期间链接里仍是上一次的内容。</p>
+  <p class="note" id="keynote">如果链接打开提示找不到，请用 <code>本页地址?k=你的访问密钥</code> 打开本页，链接会自动带上密钥。</p>
 </div>
 
 <script>
@@ -223,8 +224,18 @@
     ["来源检测", "sources-check.md"]
   ];
   var ul = $("links");
+  // 访问密钥：用 .../frontend/?k=密钥 打开本页一次，之后链接会自动带上
+  var accessKey = "";
+  try {
+    var qk = new URLSearchParams(location.search).get("k");
+    if (qk) sessionStorage.setItem("access_key", qk);
+    accessKey = qk || sessionStorage.getItem("access_key") || "";
+  } catch (e) {}
+  $("keynote").hidden = !!accessKey;
   files.forEach(function (f) {
-    var url = new URL(f[1], location.href).href;   // 与本页同目录（页面在 /frontend/ 下，链接就带 /frontend/）
+    var u = new URL(f[1], location.href);   // 与本页同目录（页面在 /frontend/ 下，链接就带 /frontend/）
+    if (accessKey) u.searchParams.set("k", accessKey);
+    var url = u.href;
     var li = document.createElement("li");
     var left = document.createElement("div");
     var name = document.createElement("div");
