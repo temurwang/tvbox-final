@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T03:38:57+00:00",
+  "generated_at": "2026-11-17T04:40:50+00:00",
   "seed_only": false,
   "seed_loaded": true,
   "untrusted_sources_parsed": 85,
@@ -13,8 +13,8 @@
   "validation_reasons": {
     "http_403": 14,
     "ok": 86,
-    "connection_error": 105,
-    "not_json": 30,
+    "connection_error": 106,
+    "not_json": 29,
     "http_523": 3,
     "http_429": 4,
     "timeout": 17,
@@ -24,9 +24,9 @@
     "no_class": 1
   },
   "latency_ms": {
-    "min": 102,
-    "median": 407,
-    "max": 1761
+    "min": 86,
+    "median": 307,
+    "max": 2475
   },
   "threshold_ms": 4000
 }
