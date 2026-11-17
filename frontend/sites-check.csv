@@ -1,92 +1,91 @@
 ﻿名称,API地址,来源,是否可用,耗时(ms),原因,是否信任,是否进入输出
-🍀U酷资源88,https://api.ukuapi88.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,88,可用,否,是
-🍀最大资源,https://api.zuidapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,90,可用,否,是
-黄色仓库,https://hsckzy.vip/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,129,可用,否,是
-⚡光速资源 | 极速切片,https://api.guangsuapi.com/api.php/provide/vod/json,https://raw.githubusercontent.com/ciihom/tvbox/5d9bc285000dbec5008b48d2166068c8f09c5936/box.json,是,140,可用,否,是
-鸡坤采集,https://jkunzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,148,可用,否,是
-大众影视,https://cdn.dzzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,152,可用,否,是
-🍀鲸鱼资源,https://jyzyapi.com/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,154,可用,否,是
-雷蒙影视 | 🚀光速,https://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,156,可用,否,是
-🚀玉兔,https://apiyutu.com/api.php/provide/vod,https://raw.githubusercontent.com/dlgt7/TVbox-interface/c759b853c633aa1f8a41b518b0f7988bfadbc017/jj.json,是,157,可用,否,是
-🍀无尽ME,https://api.wujinapi.me/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,158,可用,否,是
-91md91麻豆,https://91md.me/api.php/provide/vod/at/json,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,是,163,可用,否,是
-🍀极速资源,https://jszyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,170,可用,否,是
-🐝光速资源,https://api.guangsuapi.com/api.php/provide/vod,https://raw.githubusercontent.com/swirldawn/swirldawn.github.io/efe8c649f8f175a3352b9474ff6215efb7c1cc0c/tvbox.json,是,173,可用,否,是
-🍀金鹰点播,https://jinyingzy.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,174,可用,否,是
-91md,https://91md.me/api.php/provide/vod/from/mdm3u8,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,是,181,可用,否,是
-souAV,https://api.souavzyw.net/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,203,可用,否,是
-🍀新浪HTTPS,https://api.xinlangapi.com/xinlangapi.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,206,可用,否,是
-⚽红牛体育 | 足球/NBA/录像,https://www.hongniuzy2.com/api.php/provide/vod/at/josn,https://raw.githubusercontent.com/ciihom/tvbox/5d9bc285000dbec5008b48d2166068c8f09c5936/box.json,是,210,可用,否,是
+🍀U酷资源88,https://api.ukuapi88.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,59,可用,否,是
+🚀155,https://155api.com/api.php/provide/vod,https://raw.githubusercontent.com/dlgt7/TVbox-interface/c759b853c633aa1f8a41b518b0f7988bfadbc017/jj.json,是,97,可用,否,是
+🍀最大资源,https://api.zuidapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,105,可用,否,是
+🍀虎牙资源,https://www.huyaapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,105,可用,否,是
+雷蒙影视 | 🚀光速,https://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,107,可用,否,是
+CK资源,https://ckzy.me/api.php/provide/vod,https://raw.githubusercontent.com/Dong-learn9/TVBox-zyjk/adb3ff7df4e0465c23bdf62b2c9536de25c08db2/18.json,是,109,可用,否,是
+🐝光速资源,https://api.guangsuapi.com/api.php/provide/vod,https://raw.githubusercontent.com/swirldawn/swirldawn.github.io/efe8c649f8f175a3352b9474ff6215efb7c1cc0c/tvbox.json,是,110,可用,否,是
+🍀无尽ME,https://api.wujinapi.me/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,111,可用,否,是
+🚀玉兔,https://apiyutu.com/api.php/provide/vod,https://raw.githubusercontent.com/dlgt7/TVbox-interface/c759b853c633aa1f8a41b518b0f7988bfadbc017/jj.json,是,121,可用,否,是
+🐝无尽资源,https://api.wujinapi.com/api.php/provide/vod,https://raw.githubusercontent.com/swirldawn/swirldawn.github.io/efe8c649f8f175a3352b9474ff6215efb7c1cc0c/tvbox.json,是,129,可用,否,是
+索尼(采集),https://suoniapi.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/13998394872/TVBox/b01776dccb8d49b6b8fca60657a95bfd84196d44/PG.json,是,129,可用,否,是
+🍀无尽CC,https://api.wujinapi.cc/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,132,可用,否,是
+鸡坤采集,https://jkunzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,134,可用,否,是
+🍀鲸鱼资源,https://jyzyapi.com/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,135,可用,否,是
+⚡光速资源 | 极速切片,https://api.guangsuapi.com/api.php/provide/vod/json,https://raw.githubusercontent.com/ciihom/tvbox/5d9bc285000dbec5008b48d2166068c8f09c5936/box.json,是,136,可用,否,是
+大众影视,https://cdn.dzzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,143,可用,否,是
+索尼┃采集,https://suoniapi.com/api.php/provide/vod,https://raw.githubusercontent.com/qist/tvbox/8bab4202dd31eaad9f768d51f0f6e68b4f82bb6c/0821.json,是,145,可用,否,是
+🍀红牛资源3,https://www.hongniuzy3.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,146,可用,否,是
+索尼┃资源,https://suoniapi.com/api.php/provide/vod/from/snm3u8,https://raw.githubusercontent.com/guot55/yg/0e6ace4a7aafe49cf2b12d718f0b8cb11eeee6eb/jsm.json,是,154,可用,否,是
+🍀金鹰点播,https://jinyingzy.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,164,可用,否,是
+🏎️快车资源 | 经典老剧/港台,https://caiji.kuaichezy.org/api.php/provide/vod,https://raw.githubusercontent.com/ciihom/tvbox/5d9bc285000dbec5008b48d2166068c8f09c5936/box.json,是,165,可用,否,是
+🚀玉兔,https://apiyutu.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/dlgt7/TVbox-interface/c759b853c633aa1f8a41b518b0f7988bfadbc017/jj.json,是,169,可用,否,是
+🐝红牛资源,https://www.hongniuzy2.com/api.php/provide/vod,https://raw.githubusercontent.com/swirldawn/swirldawn.github.io/efe8c649f8f175a3352b9474ff6215efb7c1cc0c/tvbox.json,是,174,可用,否,是
+黄色仓库,https://hsckzy.vip/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,178,可用,否,是
+🍀索尼-闪电,https://xsd.sdzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,180,可用,否,是
+⚽红牛体育 | 足球/NBA/录像,https://www.hongniuzy2.com/api.php/provide/vod/at/josn,https://raw.githubusercontent.com/ciihom/tvbox/5d9bc285000dbec5008b48d2166068c8f09c5936/box.json,是,185,可用,否,是
+🍀丫丫点播,https://cj.yayazy.net/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,190,可用,否,是
+🍀极速资源,https://jszyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,192,可用,否,是
+🍀iKun资源,https://ikunzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,193,可用,否,是
+🍀魔都动漫,https://caiji.moduapi.cc/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,194,可用,否,是
+🍀天涯资源,https://tyyszy.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,195,可用,否,是
+souAV,https://api.souavzyw.net/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,204,可用,否,是
+🍀牛牛点播,https://api.niuniuzy.me/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,206,可用,否,是
 百度┃采集,https://api.apibdzy.com/api.php/provide/vod,https://raw.githubusercontent.com/qist/tvbox/8bab4202dd31eaad9f768d51f0f6e68b4f82bb6c/0821.json,是,211,可用,否,是
-🚀玉兔,https://apiyutu.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/dlgt7/TVbox-interface/c759b853c633aa1f8a41b518b0f7988bfadbc017/jj.json,是,213,可用,否,是
-🍀天涯海角,https://tyyszyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,218,可用,否,是
-🍀iKun资源,https://ikunzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,223,可用,否,是
-滴滴采集,https://api.ddapi.cc/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,223,可用,否,是
-🍀无尽NET,https://api.wujinapi.net/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,224,可用,否,是
-🍀海豚资源,https://hhzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,228,可用,否,是
-小鸡窝,https://api.xiaojizy.live/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,233,可用,否,是
-🐝无尽资源,https://api.wujinapi.com/api.php/provide/vod,https://raw.githubusercontent.com/swirldawn/swirldawn.github.io/efe8c649f8f175a3352b9474ff6215efb7c1cc0c/tvbox.json,是,237,可用,否,是
-🍀天涯资源,https://tyyszy.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,237,可用,否,是
-🐝U酷 资源,https://api.ukuapi.com/api.php/provide/vod,https://raw.githubusercontent.com/swirldawn/swirldawn.github.io/efe8c649f8f175a3352b9474ff6215efb7c1cc0c/tvbox.json,是,241,可用,否,是
-CK,https://www.ckzy1.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,258,可用,否,是
-🚀森林1,https://slapibf.com/api.php/provide/vod,https://raw.githubusercontent.com/dlgt7/TVbox-interface/c759b853c633aa1f8a41b518b0f7988bfadbc017/jj.json,是,261,可用,否,是
-🐝红牛资源,https://www.hongniuzy2.com/api.php/provide/vod,https://raw.githubusercontent.com/swirldawn/swirldawn.github.io/efe8c649f8f175a3352b9474ff6215efb7c1cc0c/tvbox.json,是,268,可用,否,是
-🍀无尽CC,https://api.wujinapi.cc/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,273,可用,否,是
-🍀红牛资源3,https://www.hongniuzy3.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,275,可用,否,是
-电影天堂,https://caiji.dyttzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/hanhan8127/TVBox/b90234729fc311a1ab928401ccf139d4ce335b0a/hanXC.json,是,275,可用,否,是
-豆豆,https://api.douapi.cc/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,276,可用,否,是
-🚀155,https://155api.com/api.php/provide/vod,https://raw.githubusercontent.com/dlgt7/TVbox-interface/c759b853c633aa1f8a41b518b0f7988bfadbc017/jj.json,是,277,可用,否,是
-🍀閃電资源,https://sdzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,286,可用,否,是
-麻豆cc,https://md91.cc/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,293,可用,否,是
-91麻豆,https://91md.me/api.php/provide/vod,https://raw.githubusercontent.com/Dong-learn9/TVBox-zyjk/adb3ff7df4e0465c23bdf62b2c9536de25c08db2/18.json,是,314,可用,否,是
-🍀丫丫点播,https://cj.yayazy.net/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,314,可用,否,是
-🚀深林,https://slapibf.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/dlgt7/TVbox-interface/c759b853c633aa1f8a41b518b0f7988bfadbc017/jj.json,是,318,可用,否,是
-索尼(采集),https://suoniapi.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/13998394872/TVBox/b01776dccb8d49b6b8fca60657a95bfd84196d44/PG.json,是,318,可用,否,是
-❤ikun资源,https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/at/json,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,327,可用,否,是
-索尼┃采集,https://suoniapi.com/api.php/provide/vod,https://raw.githubusercontent.com/qist/tvbox/8bab4202dd31eaad9f768d51f0f6e68b4f82bb6c/0821.json,是,331,可用,否,是
-❤优质资源,https://api.1080zyku.com/inc/api_mac10.php,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,348,可用,否,是
-极速影院,https://jszyapi.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/hanhan8127/TVBox/b90234729fc311a1ab928401ccf139d4ce335b0a/hanXC.json,是,352,可用,否,是
-🍀索尼-闪电,https://xsd.sdzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,353,可用,否,是
-CK资源,https://ckzy.me/api.php/provide/vod,https://raw.githubusercontent.com/Dong-learn9/TVBox-zyjk/adb3ff7df4e0465c23bdf62b2c9536de25c08db2/18.json,是,354,可用,否,是
-奥斯卡,https://aosikazy.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,410,可用,否,是
-🏎️快车资源 | 经典老剧/港台,https://caiji.kuaichezy.org/api.php/provide/vod,https://raw.githubusercontent.com/ciihom/tvbox/5d9bc285000dbec5008b48d2166068c8f09c5936/box.json,是,414,可用,否,是
-索尼┃资源,https://suoniapi.com/api.php/provide/vod/from/snm3u8,https://raw.githubusercontent.com/guot55/yg/0e6ace4a7aafe49cf2b12d718f0b8cb11eeee6eb/jsm.json,是,416,可用,否,是
-🍀魔都资源,https://www.mdzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,424,可用,否,是
-大奶子,https://apidanaizi.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,426,可用,否,是
-🍀暴风APP,https://app.bfzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,429,可用,否,是
-暴風┃采集,https://bfzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/qist/tvbox/8bab4202dd31eaad9f768d51f0f6e68b4f82bb6c/0821.json,是,442,可用,否,是
-🍀牛牛点播,https://api.niuniuzy.me/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,449,可用,否,是
-🍀1080JSON,https://api.1080zyku.com/inc/apijson.php,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,456,可用,否,是
-🍀速博资源,https://subocaiji.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,456,可用,否,是
-🍀虎牙资源,https://www.huyaapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,488,可用,否,是
-🚀奶香,https://naixxzy.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/dlgt7/TVbox-interface/c759b853c633aa1f8a41b518b0f7988bfadbc017/jj.json,是,493,可用,否,是
-❤淘片资源,https://taopianapi.com/cjapi/mc/vod/json.html,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,506,可用,否,是
-🍀魔都动漫,https://caiji.moduapi.cc/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,516,可用,否,是
-1080影院,https://api.yzzy-api.com/inc/apijson.php,https://raw.githubusercontent.com/hanhan8127/TVBox/b90234729fc311a1ab928401ccf139d4ce335b0a/hanXC.json,是,619,可用,否,是
-乐播资源,https://lbapi9.com/api.php/provide/vod,https://raw.githubusercontent.com/Dong-learn9/TVBox-zyjk/adb3ff7df4e0465c23bdf62b2c9536de25c08db2/18.json,是,713,可用,否,是
-非凡(采集),https://cj.ffzyapi.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/13998394872/TVBox/b01776dccb8d49b6b8fca60657a95bfd84196d44/PF.json,是,754,可用,否,是
-apilj辣椒资源,https://apilj.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,是,761,可用,否,是
-猫眼资源,https://api.maoyanapi.top/api.php/provide/vod,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,835,可用,否,是
-黑料,https://heiliaozyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,842,可用,否,是
-🍀非凡API,https://api.ffzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,866,可用,否,是
-dadiapi大地,https://dadiapi.com/api.php/provide/vod,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,是,883,可用,否,是
-鲨鱼资源,https://shayuapi.com/api.php/provide/vod,https://raw.githubusercontent.com/Dong-learn9/TVBox-zyjk/adb3ff7df4e0465c23bdf62b2c9536de25c08db2/18.json,是,885,可用,否,是
-🍀非凡采集HTTPS,https://cj.ffzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,891,可用,否,是
-lovedan艾旦,https://lovedan.net/api.php/provide/vod,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,是,1040,可用,否,是
-精品,https://www.jingpinx.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,1054,可用,否,是
-番茄,https://fqzy.me/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,是,1087,可用,否,是
-天涯影院,https://ty.tyyszy5.com/api.php/provide/vod,https://raw.githubusercontent.com/hanhan8127/TVBox/b90234729fc311a1ab928401ccf139d4ce335b0a/hanXC.json,是,1151,可用,否,是
-西瓜资源,https://xiguazy.tv/api.php/provide/vod,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,1204,可用,否,是
-忆梦影视,https://www.gnpt.net/api.php/provide/vod,https://raw.githubusercontent.com/1771245847/TvBox/e603cf6938131963cb906e0ee34b78550a5a9edf/cyys.json,是,1276,可用,否,是
-🍀360资源,https://360zy.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,1335,可用,否,是
-360资源,https://360zy.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/1771245847/TvBox/e603cf6938131963cb906e0ee34b78550a5a9edf/cyys.json,是,1400,可用,否,是
-💕短剧💕,https://cj.lzcaiji.com/api.php/provide/vod/from/liangzi,https://raw.githubusercontent.com/Newtxin/tvbox/d07b4c987056fba4af1ce5ca7c139161c9b11972/0501.json,是,1417,可用,否,是
-速优,https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8,https://raw.githubusercontent.com/jyoketsu/tv/935e9113f1972b5b2ee0cfa4abb974a93dc78de4/m.json,是,1450,可用,否,是
-量子┃采集,https://cj.lziapi.com/api.php/provide/vod,https://raw.githubusercontent.com/qist/tvbox/8bab4202dd31eaad9f768d51f0f6e68b4f82bb6c/0821.json,是,1494,可用,否,是
-量子(采集),https://cj.lziapi.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/13998394872/TVBox/b01776dccb8d49b6b8fca60657a95bfd84196d44/PF.json,是,1527,可用,否,是
-🍀如意资源,https://cj.rycjapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,1736,可用,否,是
-🍀魔都影视,https://www.moduzy.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,1898,可用,否,是
-🍀茅台资源,https://caiji.maotaizy.cc/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,2122,可用,否,是
+🍀无尽NET,https://api.wujinapi.net/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,223,可用,否,是
+🍀天涯海角,https://tyyszyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,224,可用,否,是
+电影天堂,https://caiji.dyttzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/hanhan8127/TVBox/b90234729fc311a1ab928401ccf139d4ce335b0a/hanXC.json,是,227,可用,否,是
+CK,https://www.ckzy1.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,229,可用,否,是
+🍀新浪HTTPS,https://api.xinlangapi.com/xinlangapi.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,234,可用,否,是
+🚀森林1,https://slapibf.com/api.php/provide/vod,https://raw.githubusercontent.com/dlgt7/TVbox-interface/c759b853c633aa1f8a41b518b0f7988bfadbc017/jj.json,是,241,可用,否,是
+奥斯卡,https://aosikazy.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,241,可用,否,是
+🍀閃電资源,https://sdzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,246,可用,否,是
+豆豆,https://api.douapi.cc/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,253,可用,否,是
+滴滴采集,https://api.ddapi.cc/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,255,可用,否,是
+麻豆cc,https://md91.cc/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,261,可用,否,是
+🍀海豚资源,https://hhzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,264,可用,否,是
+🐝U酷 资源,https://api.ukuapi.com/api.php/provide/vod,https://raw.githubusercontent.com/swirldawn/swirldawn.github.io/efe8c649f8f175a3352b9474ff6215efb7c1cc0c/tvbox.json,是,276,可用,否,是
+❤ikun资源,https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/at/json,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,276,可用,否,是
+🚀深林,https://slapibf.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/dlgt7/TVbox-interface/c759b853c633aa1f8a41b518b0f7988bfadbc017/jj.json,是,302,可用,否,是
+小鸡窝,https://api.xiaojizy.live/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,307,可用,否,是
+❤淘片资源,https://taopianapi.com/cjapi/mc/vod/json.html,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,341,可用,否,是
+极速影院,https://jszyapi.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/hanhan8127/TVBox/b90234729fc311a1ab928401ccf139d4ce335b0a/hanXC.json,是,344,可用,否,是
+91md,https://91md.me/api.php/provide/vod/from/mdm3u8,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,是,360,可用,否,是
+暴風┃采集,https://bfzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/qist/tvbox/8bab4202dd31eaad9f768d51f0f6e68b4f82bb6c/0821.json,是,371,可用,否,是
+91md91麻豆,https://91md.me/api.php/provide/vod/at/json,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,是,386,可用,否,是
+❤优质资源,https://api.1080zyku.com/inc/api_mac10.php,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,427,可用,否,是
+🍀速博资源,https://subocaiji.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,442,可用,否,是
+91麻豆,https://91md.me/api.php/provide/vod,https://raw.githubusercontent.com/Dong-learn9/TVBox-zyjk/adb3ff7df4e0465c23bdf62b2c9536de25c08db2/18.json,是,499,可用,否,是
+乐播资源,https://lbapi9.com/api.php/provide/vod,https://raw.githubusercontent.com/Dong-learn9/TVBox-zyjk/adb3ff7df4e0465c23bdf62b2c9536de25c08db2/18.json,是,501,可用,否,是
+1080影院,https://api.yzzy-api.com/inc/apijson.php,https://raw.githubusercontent.com/hanhan8127/TVBox/b90234729fc311a1ab928401ccf139d4ce335b0a/hanXC.json,是,546,可用,否,是
+🍀暴风APP,https://app.bfzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,588,可用,否,是
+🍀1080JSON,https://api.1080zyku.com/inc/apijson.php,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,600,可用,否,是
+🍀魔都资源,https://www.mdzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,617,可用,否,是
+大奶子,https://apidanaizi.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,627,可用,否,是
+🚀奶香,https://naixxzy.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/dlgt7/TVbox-interface/c759b853c633aa1f8a41b518b0f7988bfadbc017/jj.json,是,692,可用,否,是
+黑料,https://heiliaozyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,760,可用,否,是
+猫眼资源,https://api.maoyanapi.top/api.php/provide/vod,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,818,可用,否,是
+apilj辣椒资源,https://apilj.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,是,828,可用,否,是
+🍀非凡采集HTTPS,https://cj.ffzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,830,可用,否,是
+鲨鱼资源,https://shayuapi.com/api.php/provide/vod,https://raw.githubusercontent.com/Dong-learn9/TVBox-zyjk/adb3ff7df4e0465c23bdf62b2c9536de25c08db2/18.json,是,902,可用,否,是
+dadiapi大地,https://dadiapi.com/api.php/provide/vod,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,是,911,可用,否,是
+🍀非凡API,https://api.ffzyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,928,可用,否,是
+精品,https://www.jingpinx.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,963,可用,否,是
+天涯影院,https://ty.tyyszy5.com/api.php/provide/vod,https://raw.githubusercontent.com/hanhan8127/TVBox/b90234729fc311a1ab928401ccf139d4ce335b0a/hanXC.json,是,976,可用,否,是
+西瓜资源,https://xiguazy.tv/api.php/provide/vod,https://raw.githubusercontent.com/niubihu1/tvbox/e8f569259d7dfa889b3f477258b64897fd35a643/1.json,是,990,可用,否,是
+番茄,https://fqzy.me/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,是,996,可用,否,是
+速优,https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8,https://raw.githubusercontent.com/jyoketsu/tv/935e9113f1972b5b2ee0cfa4abb974a93dc78de4/m.json,是,1114,可用,否,是
+非凡(采集),https://cj.ffzyapi.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/13998394872/TVBox/b01776dccb8d49b6b8fca60657a95bfd84196d44/PF.json,是,1159,可用,否,是
+💕短剧💕,https://cj.lzcaiji.com/api.php/provide/vod/from/liangzi,https://raw.githubusercontent.com/Newtxin/tvbox/d07b4c987056fba4af1ce5ca7c139161c9b11972/0501.json,是,1271,可用,否,是
+量子┃采集,https://cj.lziapi.com/api.php/provide/vod,https://raw.githubusercontent.com/qist/tvbox/8bab4202dd31eaad9f768d51f0f6e68b4f82bb6c/0821.json,是,1411,可用,否,是
+🍀茅台资源,https://caiji.maotaizy.cc/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,1580,可用,否,是
+🍀如意资源,https://cj.rycjapi.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,1600,可用,否,是
+360资源,https://360zy.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/1771245847/TvBox/e603cf6938131963cb906e0ee34b78550a5a9edf/cyys.json,是,1644,可用,否,是
+🍀360资源,https://360zy.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,1799,可用,否,是
+忆梦影视,https://www.gnpt.net/api.php/provide/vod,https://raw.githubusercontent.com/1771245847/TvBox/e603cf6938131963cb906e0ee34b78550a5a9edf/cyys.json,是,1799,可用,否,是
+量子(采集),https://cj.lziapi.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/13998394872/TVBox/b01776dccb8d49b6b8fca60657a95bfd84196d44/PF.json,是,1841,可用,否,是
+🍀魔都影视,https://www.moduzy.com/api.php/provide/vod,https://raw.githubusercontent.com/lubin776/0/af6453a9a26a8eaf50b8ff378b6a36166946f00c/0/c.json,是,2097,可用,否,是
 考拉直链(优),https://ikaola.tv/api.php/provide/vod,https://raw.githubusercontent.com/once678/looktv/eb7a8709934f54c969db84f26f949e7d2fbd6029/tvbox.json,否,,HTTP错误 403,否,否
 海外看┃采集,https://haiwaikan.com/api.php/provide/vod,https://raw.githubusercontent.com/qist/tvbox/8bab4202dd31eaad9f768d51f0f6e68b4f82bb6c/0821.json,否,,连接失败,否,否
 快帆┃采集,https://api.kuaifan.tv/api.php/provide/vod,https://raw.githubusercontent.com/qist/tvbox/8bab4202dd31eaad9f768d51f0f6e68b4f82bb6c/0821.json,否,,连接失败,否,否
@@ -151,6 +150,7 @@ kdapi酷豆(切),https://api.kdapi.info/api.php/provide/vod/at/json,https://raw.
 kkzyKK写真资源,https://kkzy.me/api.php/provide/vod/at/json,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,否,,HTTP错误 429,否,否
 kudian70酷伦理,https://api.kudian70.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,否,,连接失败,否,否
 kudouzy酷豆资源(切),https://kudouzy.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,否,,连接失败,否,否
+lovedan艾旦,https://lovedan.net/api.php/provide/vod,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,否,,超时,否,否
 mgzyz1芒果资源,https://mgzyz1.com/api.php/provide/vod/at/json,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,否,,返回的不是JSON,否,否
 putaozy葡萄,https://caiji.putaozy.net/inc/apijson_vod.php,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,否,,连接失败,否,否
 sewozyapi色窝,https://sewozyapi.com/api.php/provide/vod,https://raw.githubusercontent.com/xiongjian83/TvBox/5f8e5ad32381b307fadd0c14593b0087644a54a8/19.json,否,,连接失败,否,否
@@ -217,8 +217,8 @@ xx55zyapi点点,https://xx55zyapi.com/home/cjapi/ascf/mc10/vod/xml,https://raw.g
 狮子,https://www.vuituoi.com/api.php/provide/vod,https://raw.githubusercontent.com/jyoketsu/tv/935e9113f1972b5b2ee0cfa4abb974a93dc78de4/m.json,否,,连接失败,否,否
 天蝎,https://www.163kt.com/api.php/provide/vod,https://raw.githubusercontent.com/jyoketsu/tv/935e9113f1972b5b2ee0cfa4abb974a93dc78de4/m.json,否,,HTTP错误 410,否,否
 天秤,https://www.shuangcenmaoyi.com/api.php/provide/vod,https://raw.githubusercontent.com/jyoketsu/tv/935e9113f1972b5b2ee0cfa4abb974a93dc78de4/m.json,否,,HTTP错误 403,否,否
-黄AV,https://www.pgxdy.com/api/json.php,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,否,,没有分类列表,否,否
-幸细胞,https://www.xxibaozyw.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/ma.json,否,,连接失败,否,否
+黄AV,https://www.pgxdy.com/api/json.php,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,否,,没有分类列表,否,否
+幸细胞,https://www.xxibaozyw.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/6f21f0d83acb56400b7e9da8417db29d9a44f577/ma.json,否,,连接失败,否,否
 ✈️if101(海外推荐),https://demo.if101.tv/api.php/provide/vod,https://raw.githubusercontent.com/tiantaiyx/tvbox/d97a57c12bc0ac189cda5acfe530394e03d80371/0706.json,否,,连接失败,否,否
 🔞色猫资源,https://api.maozyapi.com/inc/api.php/provide/vod,https://raw.githubusercontent.com/cnnbgo/tvbox/cf31cb7a0186eab20588db391e7b83695d71918a/x.json,否,,HTTP错误 523,否,否
 🔞天堂福利,https://bttcj.com/inc/sapi.php,https://raw.githubusercontent.com/cnnbgo/tvbox/cf31cb7a0186eab20588db391e7b83695d71918a/x.json,否,,连接失败,否,否
@@ -239,8 +239,6 @@ Ok资源,https://api.okzy.org/api.php/provide/vod/from/okm3u8,https://raw.github
 成人11,https://caiji.huakuiapi.com/inc/apiext_vod.php,https://raw.githubusercontent.com/13998394872/TVBox/b01776dccb8d49b6b8fca60657a95bfd84196d44/PF.json,否,,连接失败,否,否
 色猫采集,https://caiji.semaozy.net/inc/apiext_vod.php,https://raw.githubusercontent.com/13998394872/TVBox/b01776dccb8d49b6b8fca60657a95bfd84196d44/PF.json,否,,HTTP错误 404,否,否
 *🔞国色资源,https://api.guosezy.com/api.php/provide/vod,https://raw.githubusercontent.com/lmlmi/xxxx/453b2de69db1bc9a2221a9662766d7461b4f7c08/888.json,否,,连接失败,否,否
-影视 • 金蝉,https://zy.jinchancaiji.com/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/md.json,否,,连接失败,否,否
-影视 • 小绵阳,https://vs.okcdn100.top/api.php/provide/vod,https://raw.githubusercontent.com/bluefriendCN/set/95e8952dad7c31a450b754a3b665c6221526e460/md.json,否,,HTTP错误 404,否,否
 电视┃MTV,https://mv.wogg.link/mv/vod,https://raw.githubusercontent.com/guot55/yg/0e6ace4a7aafe49cf2b12d718f0b8cb11eeee6eb/jsm.json,否,,返回的不是JSON,否,否
 快播,https://www.kuaibozy.com/api.php/provide/vod,https://raw.githubusercontent.com/habao260/zy/287cebc8a02d04faa5772b4c99a778f9d59f8110/2023.json,否,,HTTP错误 403,否,否
 黑木影视,https://heimuer.ggff.net/api.php/tvbox,https://raw.githubusercontent.com/jj00780078/jj00780078.github.io/830b72bdf714494fdad4af3d4c16f4e9d3d1695d/a5.json,否,,超时,否,否
