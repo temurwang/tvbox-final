@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-16T11:54:34+00:00",
+  "generated_at": "2026-11-17T03:38:57+00:00",
   "seed_only": false,
   "seed_loaded": true,
-  "untrusted_sources_parsed": 86,
+  "untrusted_sources_parsed": 85,
   "api_candidates": 266,
   "api_passed": 86,
   "api_in_output": 86,
@@ -24,9 +24,9 @@
     "no_class": 1
   },
   "latency_ms": {
-    "min": 48,
-    "median": 283,
-    "max": 3404
+    "min": 102,
+    "median": 407,
+    "max": 1761
   },
   "threshold_ms": 4000
 }
